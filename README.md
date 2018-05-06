@@ -9,6 +9,8 @@ If you want to see it's current state look at the `example` folder.
 * SFML 2.4.2.
 
 # Usage
+Documentation at http://beefywhale.tk/breakout/documentation/annotated.html
+
 ```cpp
 #include <SFML/Graphics.hpp>
 #include "breakout/Engine.h"
@@ -28,4 +30,3 @@ int main() {
 }
 ```
 Put this in a file named main.cpp and build it with SFML as a dependency.
-Documentation at http://beefywhale.tk/breakout/documentation/annotated.html
