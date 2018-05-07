@@ -1,7 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Type.h"
+#include "../BColor.h"
 
+/**
+* @brief Tile class
+*/
 class Tile {
 public:
     /**
@@ -22,7 +26,7 @@ public:
 	* @param pColor Color of the Tiles's text.
 	* @param pSolid Whether the Tile is solid or not.
 	*/
-	Tile(int x, int y, wchar_t pCh, sf::Color pColor, bool pSolid);
+	Tile(int x, int y, wchar_t pCh, BColor pColor, bool pSolid);
     
 	
    /**
@@ -32,10 +36,10 @@ public:
 	wchar_t getChar() { return ch; }
 
    /**
-	* Get the current sf::Color of the Tile.
+	* Get the current BColor of the Tile.
 	* @return The color of the Tile.
 	*/
-	sf::Color getColor() { return color; }
+	BColor getColor() { return color; }
     
    /**
 	* Get the Tile's current x and y position.
@@ -65,7 +69,7 @@ public:
 private:
     position pos;
     wchar_t ch;
-    sf::Color color;
+    BColor color;
     bool solid;
 	Type type = Type("default");
 };

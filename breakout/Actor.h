@@ -1,6 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "BColor.h"
 
+/**
+* @brief Actor class
+*/
 class Actor {
 public:
 	/**
@@ -20,7 +24,7 @@ public:
 	 * @param pCh Actor's text representing them in-game.
 	 * @param pColor Color of the Actor's text.
 	 */
-    Actor(int x, int y, wchar_t pCh, sf::Color pColor);
+    Actor(int x, int y, wchar_t pCh, BColor pColor);
 
    /**
 	* Get the Actor's current x and y position.
@@ -35,10 +39,10 @@ public:
     wchar_t getChar() { return ch; }
     
    /**
-	* Get the current sf::Color of the Actor.
+	* Get the current BColor of the Actor.
 	* @return The color of the Actor.
 	*/
-	sf::Color getColor() { return color; }
+	BColor getColor() { return color; }
 
    /**
 	* Move the Actor to a new x and y position.
@@ -76,7 +80,7 @@ public:
 	int getSight() { return radius; }
 private:
     wchar_t ch;
-    sf::Color color;
+    BColor color;
 	int radius = 3; // eventually won't be a constant
 protected:
    /**

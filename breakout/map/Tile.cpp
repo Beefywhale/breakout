@@ -2,7 +2,7 @@
 
 Tile::Tile() {}
 
-Tile::Tile(int x, int y, wchar_t pCh, sf::Color pColor, bool pSolid) {
+Tile::Tile(int x, int y, wchar_t pCh, BColor pColor, bool pSolid) {
     pos.x = x;
     pos.y = y;
     ch = pCh;
