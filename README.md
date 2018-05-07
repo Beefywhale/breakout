@@ -9,7 +9,7 @@ If you want to see it's current state look at the `example` folder.
 * SFML 2.4.2.
 
 # Usage
-Documentation at http://beefywhale.tk/breakout/documentation/annotated.html
+Documentation <a href="http://beefywhale.tk/breakout/documentation/annotated.html">here</a>
 
 ```cpp
 #include <SFML/Graphics.hpp>
