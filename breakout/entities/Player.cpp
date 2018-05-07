@@ -29,7 +29,6 @@ void Player::update(Map map) {
 			Tile tileAt = map.getTileAt(pos.x, pos.y + movementSpeed);
 			if (tileAt.isSolid()) {
 				tileAt.getType().collide();
-				printf(tileAt.getType().name.c_str());
 			} else {
 				move(0, movementSpeed);
 				canWalk = false;
