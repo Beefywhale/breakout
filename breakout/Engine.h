@@ -1,12 +1,13 @@
 #pragma once
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include "Map.h"
 #include "map/Tile.h"
 #include "entities/Player.h"
+#include "map/TypeManager.h"
+#include "Map.h"
 
 class Engine {
- public:
+public:
     Engine() {}
 
    /**
@@ -33,7 +34,7 @@ class Engine {
 	* @return the Engine's Player.
 	*/
 	Player getPlayer() { return player; }
- private:
+private:
     sf::RenderWindow* window;
     sf::Font font;
     sf::Text tileRender;

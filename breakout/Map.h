@@ -4,7 +4,7 @@
 #include "map/Tile.h"
 
 class Map {
- public:
+public:
     Map();
 	
    /**

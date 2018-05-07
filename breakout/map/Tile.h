@@ -1,8 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Type.h"
 
 class Tile {
- public:
+public:
     /**
 	 * Position struct with x and y members for coordinates.
 	 */
@@ -47,9 +48,24 @@ class Tile {
 	* @return A bool that is true if solid and false if not.
 	*/
 	bool isSolid() { return solid; }
+
+   /**
+	* Get the Type of this Tile.
+	* @return This Tile's Type.
+	*/
+	Type getType() { return type; }
+
+   /**
+	* Set the Type of this Tile.
+	* @param newType The new Type for this Tile.
+	*/
+	void setType(Type newType);
+
+
 private:
     position pos;
     wchar_t ch;
     sf::Color color;
     bool solid;
+	Type type = Type("default");
 };
