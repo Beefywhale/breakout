@@ -6,3 +6,4 @@
 - [ ] Document `Type`.
 - [ ] `Type` update virtual function.
 - [ ] `Map` loading and `Tile` `Type` assigning.
+- [ ] Font size changing through the Framework.
