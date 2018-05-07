@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 
 class Actor {
- public:
+public:
 	/**
 	 * Position struct with x and y members for coordinates.
 	 */
@@ -78,7 +78,7 @@ private:
     wchar_t ch;
     sf::Color color;
 	int radius = 3; // eventually won't be a constant
- protected:
+protected:
    /**
 	* Position of Actor on X and Y using the position struct.
 	*/

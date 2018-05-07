@@ -4,7 +4,7 @@
 #include "../Map.h"
 
 class Player: public Actor {
- public:
+public:
     Player();
 
 	/**
@@ -27,7 +27,7 @@ class Player: public Actor {
 	* @param pWalk A bool to set if the player can walk.
 	*/
 	void setWalk(bool pWalk);
- private:
+private:
     int movementSpeed = 1; // wont be a constant number later on
     sf::Clock walkClock;
     bool canWalk = true;
