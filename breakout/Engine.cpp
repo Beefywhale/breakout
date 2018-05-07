@@ -70,3 +70,10 @@ void Engine::start() {
         window->display();
     }
 }
+
+
+void Engine::changeFontSize(int newSize) {
+	fontSize = newSize;
+	tileRender.setCharacterSize(fontSize);
+	playerRender.setCharacterSize(fontSize);
+}

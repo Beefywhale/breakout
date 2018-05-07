@@ -6,6 +6,6 @@
 - [ ] Document `Type`.
 - [ ] `Type` update virtual function.
 - [ ] `Map` loading and `Tile` `Type` assigning.
-- [ ] Font size changing through the Framework.
+- [x] Font size changing through the Framework.
 - [ ] Menu framework.
 - [x] `sf::Color` override class.
