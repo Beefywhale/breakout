@@ -4,6 +4,7 @@
 #include "map/Tile.h"
 #include "entities/Player.h"
 #include "Map.h"
+#include "Logger.h"
 
 class Engine {
 public:
@@ -40,6 +41,7 @@ private:
     sf::Text playerRender;
 	sf::Text zombieRender;
     Map map;
+	Logger logger;
     Player player;
     const int fontSize = 16;
 };

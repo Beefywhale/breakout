@@ -4,9 +4,11 @@ Engine::Engine(sf::RenderWindow* pWindow, Map pMap, Player pPlayer) {
     window = pWindow;
     map = pMap;
     player = pPlayer;
+	sf::err().rdbuf(0);
+
 
     if (!font.loadFromFile("font.ttf")) {
-        // err here
+		logger.error("Failed to load font!");
     }
 
     window->setFramerateLimit(60);

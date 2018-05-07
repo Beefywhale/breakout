@@ -2,6 +2,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "map/Tile.h"
+#include "Logger.h"
 
 class Map {
 public:
@@ -22,4 +23,5 @@ public:
     Tile getTileAt(int x, int y);
 private:
     std::vector<Tile> tileMap;
+	Logger logger;
 };

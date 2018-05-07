@@ -29,6 +29,7 @@ Tile Map::getTileAt(int x, int y) {
         }
     }
     if (!found) {
+		logger.warning("Player moved off of map, creating temporary invisible Tile!");
 		return Tile(x, y, L'.', sf::Color::White, false);
     }
 }
