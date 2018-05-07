@@ -3,7 +3,6 @@
 #include <SFML/Graphics.hpp>
 #include "map/Tile.h"
 #include "entities/Player.h"
-#include "map/TypeManager.h"
 #include "Map.h"
 
 class Engine {
