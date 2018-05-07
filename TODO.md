@@ -3,7 +3,7 @@
 - [x] Error/Warning system.
 - [ ] `Item`'s and `Item` types.
 - [ ] Faster iterating through `vector`'s.
-- [ ] Document `Type`.
+- [x] Document `Type`.
 - [ ] `Type` update virtual function.
 - [ ] `Map` loading and `Tile` `Type` assigning.
 - [x] Font size changing through the Framework.
