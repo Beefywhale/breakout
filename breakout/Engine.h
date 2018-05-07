@@ -37,6 +37,13 @@ public:
 	* @return the Engine's Player.
 	*/
 	Player getPlayer() { return player; }
+
+   /**
+	* Change the font rendering size.
+	* @param newSize The new size to set the font to.
+	*/
+	void changeFontSize(int newSize);
+
 private:
     sf::RenderWindow* window;
     sf::Font font;
@@ -46,5 +53,5 @@ private:
     Map map;
 	Logger logger;
     Player player;
-    const int fontSize = 16;
+    int fontSize = 16;
 };
