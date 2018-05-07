@@ -29,4 +29,4 @@ int main() {
     return 0;
 }
 ```
-Put this in a file named main.cpp and build it with SFML as a dependency.
+Put this in a file named main.cpp and build it with SFML as a dependency. You'll need to copy the `font.ttf` to where you built the executable.
