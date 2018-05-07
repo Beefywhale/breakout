@@ -39,10 +39,10 @@ void Engine::start() {
         window->clear();
 
 		for (Tile i : map.getTiles()) {
-			tileRender.setFillColor(i.getColor());
+			tileRender.setFillColor(sf::Color(i.getColor().red, i.getColor().green, i.getColor().blue));
 
 			if (player.distance(i.getPosition().x, i.getPosition().y, player.getPosition().x, player.getPosition().y) > player.getSight()) {
-				tileRender.setFillColor(sf::Color(i.getColor().r - 150, i.getColor().g - 150, i.getColor().b - 150));
+				tileRender.setFillColor(sf::Color(i.getColor().red - 150, i.getColor().green - 150, i.getColor().blue - 150));
 			}
 
 			if (i.getPosition().x == player.getPosition().x && i.getPosition().y == player.getPosition().y) {
@@ -59,7 +59,7 @@ void Engine::start() {
 
 		player.update(map);
 
-		playerRender.setFillColor(player.getColor());
+		playerRender.setFillColor(sf::Color(player.getColor().red, player.getColor().green, player.getColor().blue));
 		playerRender.setString(player.getChar());
 		playerRender.setPosition(player.getPosition().x * (fontSize - 2),
 								 player.getPosition().y * (fontSize - 2)

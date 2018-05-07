@@ -1,4 +1,5 @@
 #include "Actor.h"
+#include "BColor.h"
 
 Actor::Actor() {
     pos.x = 0;
@@ -6,7 +7,7 @@ Actor::Actor() {
     ch = L'@';
 }
 
-Actor::Actor(int x, int y, wchar_t pCh, sf::Color pColor) {
+Actor::Actor(int x, int y, wchar_t pCh, BColor pColor) {
     pos.x = x;
     pos.y = y;
     ch = pCh;
@@ -16,7 +17,7 @@ Actor::Actor(int x, int y, wchar_t pCh, sf::Color pColor) {
 void Actor::setPosition(int x, int y) {
     pos.x = x;
     pos.y = y;
-    color = sf::Color(255,255,255);
+    color = BColor(255,255,255);
 }
 
 void Actor::move(int x, int y) {

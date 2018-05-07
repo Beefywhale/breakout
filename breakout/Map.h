@@ -4,6 +4,9 @@
 #include "map/Tile.h"
 #include "Logger.h"
 
+/**
+* @brief Map class
+*/
 class Map {
 public:
     Map();

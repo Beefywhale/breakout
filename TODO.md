@@ -8,4 +8,4 @@
 - [ ] `Map` loading and `Tile` `Type` assigning.
 - [ ] Font size changing through the Framework.
 - [ ] Menu framework.
-- [ ] `sf::Color` override class.
+- [x] `sf::Color` override class.

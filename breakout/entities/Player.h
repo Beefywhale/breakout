@@ -2,7 +2,11 @@
 #include <SFML/Graphics.hpp>
 #include "../Actor.h"
 #include "../Map.h"
+#include "../BColor.h"
 
+/**
+* @brief Player class
+*/
 class Player: public Actor {
 public:
     Player();
@@ -14,7 +18,7 @@ public:
 	* @param pCh Player's text representing them in-game.
 	* @param pColor Color of the Player's text.
 	*/
-    Player(int x, int y, wchar_t pCh, sf::Color pColor) : Actor(x, y, pCh, pColor) {}
+    Player(int x, int y, wchar_t pCh, BColor pColor) : Actor(x, y, pCh, pColor) {}
     
    /**
     * Called every game loop, used for input and collision detection.

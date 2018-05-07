@@ -6,6 +6,9 @@
 #include "Map.h"
 #include "Logger.h"
 
+/**
+* @brief Engine class
+*/
 class Engine {
 public:
     Engine() {}

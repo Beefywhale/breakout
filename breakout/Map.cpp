@@ -1,11 +1,11 @@
 #include "Map.h"
 
-void wallCollide() { printf("Colliding with Wall"); }
+void wallCollide() { printf("Colliding with Wall\n"); }
 
 Map::Map() {
 	for (int i = 0; i < 15; i++) {
 		for (int j = 0; j < 15; j++) {
-			Tile newTile(i, j, L'.', sf::Color::White, false);
+			Tile newTile(i, j, L'.', BColor(255, 255, 255), false);
 			tileMap.push_back(newTile);
 		}
 	}
@@ -13,7 +13,7 @@ Map::Map() {
 	Type wall("wall", wallCollide);
 
 	for (int x = 0; x < 15; x++) {
-		Tile newTile(x, 15, L'#', sf::Color::White, true);
+		Tile newTile(x, 15, L'#', BColor(255,255,255), true);
 		newTile.setType(wall);
 		tileMap.push_back(newTile);
 	}
@@ -30,6 +30,6 @@ Tile Map::getTileAt(int x, int y) {
     }
     if (!found) {
 		logger.warning("Player moved off of map, creating temporary invisible Tile!");
-		return Tile(x, y, L'.', sf::Color::White, false);
+		return Tile(x, y, L'.', BColor(255, 255, 255), false);
     }
 }
