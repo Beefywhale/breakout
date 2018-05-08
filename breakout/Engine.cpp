@@ -17,6 +17,8 @@ Engine::Engine(sf::RenderWindow* pWindow, Map pMap, Player pPlayer) {
     tileRender.setCharacterSize(fontSize);
     playerRender.setFont(font);
     playerRender.setCharacterSize(fontSize);
+
+	logger.plaintext("______                _               _   \n| ___ \\              | |             | |  \n| |_/ /_ __ ___  __ _| | _____  _   _| |_ \n| ___ \\ '__/ _ \\/ _` | |/ / _ \\| | | | __|\n| |_/ / | |  __/ (_| |   < (_) | |_| | |_ \n\\____/|_|  \\___|\\__,_|_|\\_\\___/ \\__,_|\\__|\n");
 }
 
 void Engine::start() {
