@@ -9,5 +9,7 @@ public:
 	
 	void error(std::string err);
 	void warning(std::string err);
+	void info(std::string inf);
+	void plaintext(std::string pt);
 };
 
