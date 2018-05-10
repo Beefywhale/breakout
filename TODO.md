@@ -1,11 +1,7 @@
 # TO DO
-- [x] `Tile` types and events for each type.
-- [x] Error/Warning system.
 - [ ] `Item`'s and `Item` types.
 - [ ] Faster iterating through `vector`'s.
-- [x] Document `Type`.
 - [ ] `Type` update virtual function.
 - [ ] `Map` loading and `Tile` `Type` assigning.
-- [x] Font size changing through the Framework.
 - [ ] Menu framework.
-- [x] `sf::Color` override class.
+- [ ] Better event system.
