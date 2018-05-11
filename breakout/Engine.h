@@ -22,9 +22,9 @@ public:
 	Engine(sf::RenderWindow* pWindow, Map pMap, Player pPlayer);
     
    /**
-	* Start the game loop. 
+	* The game loop. 
 	*/
-	void start();
+	void update();
     
    /**
 	* Get the current Map.
@@ -44,6 +44,7 @@ public:
 	*/
 	void changeFontSize(int newSize);
 
+	bool isRunning() { return window->isOpen(); }
 private:
     sf::RenderWindow* window;
     sf::Font font;
@@ -54,4 +55,5 @@ private:
 	Logger logger;
     Player player;
     int fontSize = 16;
+	std::function<void()> updateOverride;
 };
