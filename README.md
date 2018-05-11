@@ -23,7 +23,9 @@ int main() {
     Player player(0, 0, L'@', sf::Color(255,255,0));
     Map map;
     Engine engine(&window, map, player);
-    engine.start();
+    while (engine.isRunning()) {
+        engine.update();
+    }
 
 
     return 0;
