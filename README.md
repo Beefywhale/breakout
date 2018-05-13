@@ -13,21 +13,29 @@ Documentation <a href="http://beefywhale.tk/breakout/documentation/html/annotate
 
 ```cpp
 #include <SFML/Graphics.hpp>
+#include "breakout/global.h"
 #include "breakout/Engine.h"
 #include "breakout/Map.h"
 #include "breakout/entities/Player.h"
+#include "breakout/Logger.h"
+
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "breakout");
+    Logger logger;
 
-    Player player(0, 0, L'@', sf::Color(255,255,0));
+    //define types here; eventually will overhaul this...
+    Type wall("wall");
+    wall.setCollide([] { printf("colliding with wall type\n"); });
+    TM.addType(wall);
+
+    Player player(0, 0, L'@', BColor(255,255,0));
     Map map;
     Engine engine(&window, map, player);
-    while (engine.isRunning()) {
-        engine.update();
+
+	while (engine.isRunning()) { //game loop
+		engine.update();
     }
-
-
     return 0;
 }
 ```

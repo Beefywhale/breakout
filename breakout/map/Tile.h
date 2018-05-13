@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Type.h"
+#include "TypeManager.h"
 #include "../BColor.h"
 
 /**
@@ -64,8 +65,6 @@ public:
 	* @param newType The new Type for this Tile.
 	*/
 	void setType(Type newType);
-
-
 private:
     position pos;
     wchar_t ch;

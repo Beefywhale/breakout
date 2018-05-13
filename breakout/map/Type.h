@@ -13,16 +13,13 @@ public:
 	* Create a Type with just a name.
 	* @param pName The name of this Type, EX: "Door".
 	*/
-	Type(std::string pName);
-
-   /**
-	* Create a Type with a name, and collide function event.
-	* @param pName The name of this Type, EX: "Door".
-	* @param f A function to be tied to the collide event.
-	*/
-	Type(std::string pName, const std::function<void()>& f) : collideOverride(f) { name = pName; }
+    Type(std::string pName);
 	
-   /**
+
+    void setCollide(std::function<void()> newCollide) { collideOverride = newCollide; }
+    void setUpdate(std::function<void()> newUpdate) { updateOverride = newUpdate; }
+
+    /**
 	* Create a Type with a name, and collide function event.
 	*/
 	void collide() { collideOverride(); }
@@ -30,4 +27,5 @@ public:
 	std::string name;
 private:
 	std::function<void()> collideOverride;
+    std::function<void()> updateOverride;
 };

@@ -1,7 +1,5 @@
 #include "Map.h"
 
-void wallCollide() { printf("Colliding with Wall\n"); }
-
 Map::Map() {
 	for (int i = 0; i < 15; i++) {
 		for (int j = 0; j < 15; j++) {
@@ -10,11 +8,9 @@ Map::Map() {
 		}
 	}
 
-	Type wall("wall", wallCollide);
-
 	for (int x = 0; x < 15; x++) {
 		Tile newTile(x, 15, L'#', BColor(255,255,255), true);
-		newTile.setType(wall);
+		newTile.setType(TM.getTypes().at("wall"));
 		tileMap.push_back(newTile);
 	}
 }

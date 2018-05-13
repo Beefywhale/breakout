@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "global.h"
 #include <SFML/Graphics.hpp>
 #include "map/Tile.h"
 #include "Logger.h"
@@ -26,5 +27,5 @@ public:
     Tile getTileAt(int x, int y);
 private:
     std::vector<Tile> tileMap;
-	Logger logger;
+    Logger logger;
 };
