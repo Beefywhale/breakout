@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "map/Tile.h"
 #include "entities/Player.h"
+#include "map/Type.h"
 #include "Map.h"
 #include "Logger.h"
 

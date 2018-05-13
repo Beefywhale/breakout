@@ -4,4 +4,5 @@
 - [ ] `Type` update virtual function.
 - [ ] `Map` loading and `Tile` `Type` assigning.
 - [ ] Menu framework.
-- [ ] Better event system.
+- [x] Better event system.
+- [ ] Document new Type event system. (global, TypeManager, Type)
