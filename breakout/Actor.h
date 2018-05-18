@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <math.h>
-#include "Color.h"
+#include "custom/Color.h"
 using namespace bt;
 
 /**

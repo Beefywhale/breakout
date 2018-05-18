@@ -17,15 +17,11 @@ Map::Map() {
 
 Tile Map::getTileAt(int x, int y) {
     // rework this to be faster with itr and find_if, possible I might need to use boost
-    bool found = false;
     for (Tile i : tileMap) {
         if (i.getPosition().x == x && i.getPosition().y == y) {
             return i;
-            found = true;
         }
     }
-    if (!found) {
-		logger.warning("Player moved off of map, creating temporary invisible Tile!");
-		return Tile(x, y, L'.', bt::Color(255, 255, 255), false);
-    }
+	logger.warning("Out of Bounds, creating temporary invisible Tile!");
+	return Tile(x, y, L'.', bt::Color(255, 255, 255), false);
 }

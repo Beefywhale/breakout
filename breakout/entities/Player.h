@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "../Actor.h"
 #include "../Map.h"
-#include "../Color.h"
+#include "../custom/Color.h"
 using namespace bt;
 
 /**
