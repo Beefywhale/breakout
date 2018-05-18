@@ -2,7 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include "../Actor.h"
 #include "../Map.h"
-#include "../BColor.h"
+#include "../Color.h"
+using namespace bt;
 
 /**
 * @brief Player class
@@ -18,14 +19,14 @@ public:
 	* @param pCh Player's text representing them in-game.
 	* @param pColor Color of the Player's text.
 	*/
-    Player(int x, int y, wchar_t pCh, BColor pColor) : Actor(x, y, pCh, pColor) {}
-    
+    Player(int x, int y, wchar_t pCh, Color pColor) : Actor(x, y, pCh, pColor) {}
+
    /**
     * Called every game loop, used for input and collision detection.
 	* @param map A Map for getting tiles.
     */
 	void update(Map map);
-    
+
    /**
 	* Set whether the player can walk or not.
 	* @param pWalk A bool to set if the player can walk.
