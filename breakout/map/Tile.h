@@ -2,7 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include "Type.h"
 #include "TypeManager.h"
-#include "../BColor.h"
+#include "../Color.h"
+using namespace bt;
 
 /**
 * @brief Tile class
@@ -18,7 +19,7 @@ public:
 	 };
 
     Tile();
-    
+
    /**
 	* Create a new Tile at an x and y position, with text and a color.
 	* @param x Tile's starting x position.
@@ -27,9 +28,9 @@ public:
 	* @param pColor Color of the Tiles's text.
 	* @param pSolid Whether the Tile is solid or not.
 	*/
-	Tile(int x, int y, wchar_t pCh, BColor pColor, bool pSolid);
-    
-	
+	Tile(int x, int y, wchar_t pCh, Color pColor, bool pSolid);
+
+
    /**
 	* Get the current text representing the Tile.
 	* @return the character of the Tile.
@@ -40,8 +41,8 @@ public:
 	* Get the current BColor of the Tile.
 	* @return The color of the Tile.
 	*/
-	BColor getColor() { return color; }
-    
+	Color getColor() { return color; }
+
    /**
 	* Get the Tile's current x and y position.
 	* @return A position struct with the Tile's current x and y position.
@@ -68,7 +69,7 @@ public:
 private:
     position pos;
     wchar_t ch;
-    BColor color;
+    Color color;
     bool solid;
 	Type type = Type("default");
 };
