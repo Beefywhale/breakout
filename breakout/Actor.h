@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <math.h>
 #include "BColor.h"
 
 /**
@@ -11,8 +12,8 @@ public:
 	 * Position struct with x and y members for coordinates.
 	 */
 	 struct position {
-        int x; /**< Actor's position on the X axis. */ 
-        int y; /**< Actor's position on the Y axis. */ 
+        int x; /**< Actor's position on the X axis. */
+        int y; /**< Actor's position on the Y axis. */
     };
 
     Actor();
@@ -37,7 +38,7 @@ public:
 	* @return the character of the Actor.
 	*/
     wchar_t getChar() { return ch; }
-    
+
    /**
 	* Get the current BColor of the Actor.
 	* @return The color of the Actor.
