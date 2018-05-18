@@ -10,7 +10,7 @@ void Logger::error(std::string err) {
 	char buf[255];
 	strftime(buf, sizeof(buf), "[%H:%M %p] ERROR - ", now);
 	std::string time(buf);
-	fprintf(stderr, (time + err + "\n").c_str());
+	fprintf(stderr, "%s", (time + err + "\n").c_str());
 }
 
 void Logger::warning(std::string warn) {
@@ -19,7 +19,7 @@ void Logger::warning(std::string warn) {
 	char buf[255];
 	strftime(buf, sizeof(buf), "[%H:%M %p] - WARNING - ", now);
 	std::string time(buf);
-	fprintf(stderr, (time + warn+"\n").c_str());
+    fprintf(stderr, "%s", (time + warn+"\n").c_str());
 }
 
 void Logger::info(std::string inf) {
@@ -28,10 +28,10 @@ void Logger::info(std::string inf) {
 	char buf[255];
 	strftime(buf, sizeof(buf), "[%H:%M %p] - INFO - ", now);
 	std::string time(buf);
-	fprintf(stderr, (time + inf + "\n").c_str());
+	fprintf(stderr, "%s", (time + inf + "\n").c_str());
 }
 
 
 void Logger::plaintext(std::string pt) {
-	fprintf(stderr, (pt + "\n").c_str());
+	fprintf(stderr, "%s", (pt + "\n").c_str());
 }
