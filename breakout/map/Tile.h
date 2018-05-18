@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Type.h"
 #include "TypeManager.h"
-#include "../Color.h"
+#include "../custom/Color.h"
 using namespace bt;
 
 /**

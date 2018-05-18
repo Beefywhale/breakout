@@ -1,6 +1,6 @@
 #pragma once
 
-namespace bt{
+namespace bt {
     class Color {
      public:
          Color() {}
