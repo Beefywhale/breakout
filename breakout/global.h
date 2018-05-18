@@ -1,3 +1,3 @@
 #pragma once
-#include "Map/TypeManager.h"
+#include "map/TypeManager.h"
 extern TypeManager TM;
