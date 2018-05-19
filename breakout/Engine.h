@@ -4,7 +4,7 @@
 #include "map/Tile.h"
 #include "entities/Player.h"
 #include "map/Type.h"
-#include "Map.h"
+#include "map/Map.h"
 #include "Logger.h"
 
 /**

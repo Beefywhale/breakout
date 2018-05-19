@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "../Actor.h"
-#include "../Map.h"
+#include "Actor.h"
+#include "../map/Map.h"
 #include "../custom/Color.h"
 using namespace bt;
 
