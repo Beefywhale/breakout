@@ -6,7 +6,7 @@ Seriously this is a Work in Progress, so you're free to use it but it's missing 
 If you want to see it's current state look <a href="https://github.com/Beefywhale/breakout/releases">here</a>.
 
 # Requirements
-* SFML 2.4.2.
+* SFML 2.5.0
 
 # Usage
 ~~Documentation <a href="http://beefywhale.tk/breakout/documentation/html/annotated.html">here</a>~~
