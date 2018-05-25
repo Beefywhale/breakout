@@ -23,17 +23,20 @@ public:
 
    /**
     * Called every game loop, used for input and collision detection.
-	* @param map A Map for getting tiles.
     */
-	void update(Map map);
+	void update();
 
    /**
 	* Set whether the player can walk or not.
 	* @param pWalk A bool to set if the player can walk.
 	*/
 	void setWalk(bool pWalk);
-private:
-    int movementSpeed = 1; // wont be a constant number later on
-    sf::Clock walkClock;
+    
+    void safeMove(int x, int y, Map map);
+
+    int movementSpeed = 1;
     bool canWalk = true;
+
+private:
+    sf::Clock walkClock;
 };
