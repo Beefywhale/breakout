@@ -20,24 +20,18 @@ public:
 	* @param pMap A Map to get the Tiles from.
 	* @param pPlayer A Player to draw and update.
 	*/
-	Engine(sf::RenderWindow* pWindow, Map pMap, Player pPlayer);
+	Engine(sf::RenderWindow* pWindow, Map pMap);
     
    /**
-	* The game loop. 
+	* The game loop.
 	*/
-	void update();
+	void update(Player player);
     
    /**
 	* Get the current Map.
 	* @return the Engine's Map.
 	*/
 	Map getMap() { return map; }
-
-   /**
-	* Get the current Player.
-	* @return the Engine's Player.
-	*/
-	Player getPlayer() { return player; }
 
    /**
 	* Change the font rendering size.
@@ -54,7 +48,6 @@ private:
 	sf::Text zombieRender;
     Map map;
 	Logger logger;
-    Player player;
     int fontSize = 16;
 	std::function<void()> updateOverride;
 };

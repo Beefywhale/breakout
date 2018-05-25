@@ -1,9 +1,8 @@
 #include "Engine.h"
 
-Engine::Engine(sf::RenderWindow* pWindow, Map pMap, Player pPlayer) {
+Engine::Engine(sf::RenderWindow* pWindow, Map pMap) {
     window = pWindow;
     map = pMap;
-    player = pPlayer;
 	sf::err().rdbuf(0);
 
 
@@ -21,22 +20,7 @@ Engine::Engine(sf::RenderWindow* pWindow, Map pMap, Player pPlayer) {
 	logger.plaintext("______                _               _   \n| ___ \\              | |             | |  \n| |_/ /_ __ ___  __ _| | _____  _   _| |_ \n| ___ \\ '__/ _ \\/ _` | |/ / _ \\| | | | __|\n| |_/ / | |  __/ (_| |   < (_) | |_| | |_ \n\\____/|_|  \\___|\\__,_|_|\\_\\___/ \\__,_|\\__|\n");
 }
 
-void Engine::update() {
-	sf::Event event;
-    while (window->pollEvent(event)) {
-        if (event.type == sf::Event::Closed) {
-            window->close();
-        }
-        if (event.type == sf::Event::KeyReleased) {
-            int keyCode = event.key.code;
-            if (keyCode == sf::Keyboard::A || keyCode == sf::Keyboard::D || keyCode == sf::Keyboard::W || keyCode == sf::Keyboard::S) {
-                player.setWalk(true);
-            }
-            else if (keyCode == sf::Keyboard::Escape) {
-                window->close();
-            }
-        }
-    }
+void Engine::update(Player player) {
     window->clear();
 
 	for (Tile i : map.getTiles()) {
@@ -57,8 +41,6 @@ void Engine::update() {
 
 	    window->draw(tileRender);
 	}
-
-	player.update(map);
 
 	playerRender.setFillColor(sf::Color(player.getColor().red, player.getColor().green, player.getColor().blue));
 	playerRender.setString(player.getChar());
