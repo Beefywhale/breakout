@@ -23,7 +23,8 @@ Engine::Engine(sf::RenderWindow* pWindow, Map pMap) {
 void Engine::update(Player player) {
     window->clear();
 
-	for (Tile i : map.getTiles()) {
+    for (auto tilePair : map.getTiles()) {
+        Tile i = tilePair.second;
 	    tileRender.setFillColor(sf::Color(i.getColor().red, i.getColor().green, i.getColor().blue));
 
 		if (player.distance(i.getPosition().x, i.getPosition().y, player.getPosition().x, player.getPosition().y) > player.getSight()) {
