@@ -9,7 +9,7 @@ If you want to see it's current state look <a href="https://github.com/Beefywhal
 * SFML 2.5.0
 
 # Usage
-~~Documentation <a href="http://beefywhale.tk/breakout/documentation/html/annotated.html">here</a>~~
+Documentation <a href="http://beefywhale.tk/breakout/documentation/html/annotated.html">here</a>
 
 ```cpp
 #include <SFML/Graphics.hpp>
