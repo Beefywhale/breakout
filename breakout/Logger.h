@@ -2,7 +2,6 @@
 #include <string>
 #include <ctime>
 
-<<<<<<< HEAD
 /**
 * @brief Logger.
 */
@@ -37,16 +36,5 @@ public:
     * @param pt A message to output to the debug console.
     */
     void plaintext(std::string pt);
-=======
-class Logger
-{
-public:
-	Logger();
-	
-	void error(std::string err);
-	void warning(std::string err);
-	void info(std::string inf);
-	void plaintext(std::string pt);
->>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
 };
 

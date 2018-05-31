@@ -2,7 +2,6 @@
 #include <map>
 #include "Type.h"
 
-<<<<<<< HEAD
 /**
 * @brief TypeManager.
 */
@@ -23,15 +22,6 @@ public:
     * Get the map of Types.
     * @return Map of Types.
     */
-=======
-class TypeManager
-{
-public:
-    TypeManager();
-
-    void addType(Type newType);
-
->>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
     std::map<std::string, Type> getTypes() { return types; }
 
 private:
