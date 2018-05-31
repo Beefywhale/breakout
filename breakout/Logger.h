@@ -5,8 +5,7 @@
 /**
 * @brief Logger.
 */
-class Logger
-{
+class Logger {
 public:
    /**
     * Default constructor for Logger.
