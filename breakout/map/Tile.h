@@ -6,7 +6,7 @@
 using namespace bt;
 
 /**
-* @brief Tile class
+* @brief Tile.
 */
 class Tile {
 public:
@@ -33,13 +33,13 @@ public:
 
    /**
 	* Get the current text representing the Tile.
-	* @return the character of the Tile.
+	* @return The character of the Tile.
 	*/
 	wchar_t getChar() { return ch; }
 
    /**
-	* Get the current BColor of the Tile.
-	* @return The color of the Tile.
+	* Get the current Color of the Tile.
+	* @return The Color of the Tile.
 	*/
 	Color getColor() { return color; }
 
@@ -66,6 +66,7 @@ public:
 	* @param newType The new Type for this Tile.
 	*/
 	void setType(Type newType);
+
 private:
     position pos;
     wchar_t ch;

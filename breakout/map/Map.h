@@ -8,10 +8,13 @@
 #include "../Logger.h"
 
 /**
-* @brief Map class
+* @brief Map.
 */
 class Map {
 public:
+    /**
+     * Default constructor for Map.
+     */
     Map();
 	
    /**
@@ -24,9 +27,10 @@ public:
 	* Get the Tile at a specific set of coordinates
 	* @param x The x coordinate of the tile you want.
 	* @param y The y coordinate of the tile you want.
-	* @return A Tile with the same x and y coordinates.
+	* @return The Tile at the x and y coordinates.
 	*/
     Tile getTileAt(int x, int y);
+
 private:
     std::map<std::pair<int, int>, Tile> tileMap;
     std::map<std::pair<int, int>, Tile>::iterator it;

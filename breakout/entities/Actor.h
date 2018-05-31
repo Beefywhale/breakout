@@ -5,19 +5,22 @@
 using namespace bt;
 
 /**
-* @brief Actor class
+* @brief Actor.
 */
 class Actor {
 public:
-	/**
+    /**
+     * Default constructor for Actor.
+     */
+    Actor();
+    
+    /**
 	 * Position struct with x and y members for coordinates.
 	 */
 	 struct position {
         int x; /**< Actor's position on the X axis. */
         int y; /**< Actor's position on the Y axis. */
     };
-
-    Actor();
 
     /**
 	 * Create a new Actor at an x and y position, with text and a color.

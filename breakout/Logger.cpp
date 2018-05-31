@@ -1,9 +1,5 @@
 #include "Logger.h"
 
-Logger::Logger()
-{
-}
-
 void Logger::error(std::string err) {
 	std::time_t t = std::time(0);
 	std::tm* now = std::localtime(&t);

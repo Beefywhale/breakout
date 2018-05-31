@@ -6,13 +6,16 @@
 using namespace bt;
 
 /**
-* @brief Player class
+* @brief Player.
 */
 class Player: public Actor {
 public:
+   /**
+    * Default constructor for Player.
+    */
     Player();
 
-	/**
+   /**
 	* Create a new Player at an x and y position, with text and a color.
 	* @param x Player's starting x position.
 	* @param y Player's starting y position.
@@ -31,12 +34,14 @@ public:
 	* @param pWalk A bool to set if the player can walk.
 	*/
 	void setWalk(bool pWalk);
-    
+   
+    /**
+     * Move the Player while checking collision and timings.
+     */
     void safeMove(int x, int y, Map map);
 
     int movementSpeed = 1;
     bool canWalk = true;
-
 private:
     sf::Clock walkClock;
 };
