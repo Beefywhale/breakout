@@ -8,7 +8,11 @@
 #include "Logger.h"
 
 /**
+<<<<<<< HEAD
 * @brief Engine.
+=======
+* @brief Engine class
+>>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
 */
 class Engine {
 public:
@@ -18,15 +22,25 @@ public:
 	* Preload variables and objects.
 	* @param pWindow A RenderWindow* to draw to.
 	* @param pMap A Map to get the Tiles from.
+<<<<<<< HEAD
+=======
+	* @param pPlayer A Player to draw and update.
+>>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
 	*/
 	Engine(sf::RenderWindow* pWindow, Map pMap);
     
    /**
 	* The game loop.
+<<<<<<< HEAD
     * @param player The current player.
 	*/
 	void update(Player player);
 
+=======
+	*/
+	void update(Player player);
+    
+>>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
    /**
 	* Get the current Map.
 	* @return the Engine's Map.
@@ -39,10 +53,13 @@ public:
 	*/
 	void changeFontSize(int newSize);
 
+<<<<<<< HEAD
    /**
     * Check if the Engine is still running.
     * @return A boolean which is true if the Engine is still running
     */
+=======
+>>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
 	bool isRunning() { return window->isOpen(); }
 private:
     sf::RenderWindow* window;

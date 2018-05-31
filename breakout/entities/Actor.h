@@ -5,6 +5,7 @@
 using namespace bt;
 
 /**
+<<<<<<< HEAD
 * @brief Actor.
 */
 class Actor {
@@ -15,6 +16,13 @@ public:
     Actor();
     
     /**
+=======
+* @brief Actor class
+*/
+class Actor {
+public:
+	/**
+>>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
 	 * Position struct with x and y members for coordinates.
 	 */
 	 struct position {
@@ -22,6 +30,11 @@ public:
         int y; /**< Actor's position on the Y axis. */
     };
 
+<<<<<<< HEAD
+=======
+    Actor();
+
+>>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
     /**
 	 * Create a new Actor at an x and y position, with text and a color.
 	 * @param x Actor's starting x position.

@@ -3,6 +3,7 @@
 #include <functional>
 
 /**
+<<<<<<< HEAD
 * @brief Type.
 */
 class Type {
@@ -10,6 +11,12 @@ public:
    /**
     * Default constructor for Type.
     */
+=======
+* @brief Type class
+*/
+class Type {
+public:
+>>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
 	Type();
 
    /**
@@ -18,6 +25,7 @@ public:
 	*/
     Type(std::string pName);
 	
+<<<<<<< HEAD
    /**
     * Set a function to be called everytime something collides with a Tile with this Type.
     * @param newCollide A function to be called everytime something collides.
@@ -32,6 +40,14 @@ public:
 
    /**
 	* Create a Type with a name and collide function event.
+=======
+
+    void setCollide(std::function<void()> newCollide) { collideOverride = newCollide; }
+    void setUpdate(std::function<void()> newUpdate) { updateOverride = newUpdate; }
+
+    /**
+	* Create a Type with a name, and collide function event.
+>>>>>>> 5375c24c6621ab1bd5924cb6c2f41bbbdc64e7dc
 	*/
 	void collide() { collideOverride(); }
 
