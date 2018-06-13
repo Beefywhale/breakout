@@ -1,8 +1,11 @@
 #pragma once
+#include <memory>
 #include <SFML/Graphics.hpp>
 #include "Actor.h"
 #include "../map/Map.h"
 #include "../custom/Color.h"
+#include "Inventory.h"
+
 using namespace bt;
 
 /**
@@ -40,8 +43,11 @@ public:
      */
     void safeMove(int x, int y, Map map);
 
+    Inventory* getInventory() { return inv; }
+
     int movementSpeed = 1;
     bool canWalk = true;
 private:
     sf::Clock walkClock;
+    Inventory* inv = new Inventory;
 };

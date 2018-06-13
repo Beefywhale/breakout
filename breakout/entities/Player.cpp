@@ -1,6 +1,7 @@
 #include "Player.h"
 
-Player::Player() {}
+Player::Player() {
+}
 
 void Player::update() {
     if ((int)walkClock.getElapsedTime().asMilliseconds() >= 100) {
