@@ -7,7 +7,7 @@
 class Inventory
 {
 public:
-    Inventory();
+    Inventory() {}
 
     void addItem(Item newItem);
 

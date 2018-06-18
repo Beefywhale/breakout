@@ -1,10 +1,5 @@
 #include "Inventory.h"
 
-
-Inventory::Inventory() {
-
-}
-
 void Inventory::addItem(Item newItem) {
     if (items.find(newItem.getName()) != items.end()) {
         items[newItem.getName()].push_back(newItem);
