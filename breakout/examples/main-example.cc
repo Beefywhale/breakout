@@ -40,7 +40,7 @@ void inputLoop(Player* player, sf::RenderWindow* window, Map map) {
 }
 
 void types() {
-    //define Tile types here, doesn't have much use now but forward thinking amirite :( - eventually will be overhauled
+    //define Tile types here, doesn't have much use now but forward thinking amirite :( - eventually will be overhaul
     Type wall("wall");
     wall.setCollide([] { printf("colliding with wall type\n"); });
     TM.addType(wall);
