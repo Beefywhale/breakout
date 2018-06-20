@@ -4,7 +4,10 @@
 #include "Actor.h"
 #include "../map/Map.h"
 #include "../custom/Color.h"
+#include "../global.h"
 #include "Inventory.h"
+
+#include <typeinfo>
 
 using namespace bt;
 

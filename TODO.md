@@ -4,3 +4,4 @@
 - [ ] `Map` loading and `Tile` `Type` assigning.
 - [ ] Menu framework.
 - [ ] Inventory system.
+- [ ] Fix `Event` system.
