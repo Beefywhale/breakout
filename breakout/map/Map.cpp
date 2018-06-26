@@ -10,7 +10,6 @@ Map::Map() {
 
 	for (int x = 0; x < 15; x++) {
 		Tile newTile(x, 15, L'#', bt::Color(255,255,255), true);
-		newTile.setType(TM.getTypes().at("wall"));
 		tileMap.insert(std::make_pair(std::make_pair(x, 15), newTile));
 	}
 }

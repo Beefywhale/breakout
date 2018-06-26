@@ -1,6 +1,6 @@
 #pragma once
-#include "map/TypeManager.h"
 #include "custom/EventHandler.h"
+#include "Logger.h"
 
-extern TypeManager TM;
 extern EventHandler eventHandler;
+extern Logger logger;

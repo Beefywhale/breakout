@@ -4,9 +4,13 @@
 
 class EventHandler {
 public:
-    void addEvent(Event event);
-    bool pollEvents(Event event);
+    EventHandler() {}
+
+    void addEvent(Event* event);
+    Event* pollEvents();
+    bool isEmpty() { return eventQueue.empty(); }
+    std::queue<Event*> getQueue() { return eventQueue; }
 
 private:
-    std::queue<Event> eventQueue;
+    std::queue<Event*> eventQueue;
 };

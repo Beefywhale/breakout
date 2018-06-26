@@ -8,7 +8,7 @@ public:
     Event(const Event&) {}
 
     struct CollisionEvent {
-        Tile tile;
+        Tile* tile;
     
         CollisionEvent() {}
         ~CollisionEvent() {}
@@ -24,6 +24,6 @@ public:
     EventType type;
 
     union {
-        CollisionEvent collision;
+        CollisionEvent* collision = new CollisionEvent;
     };
 };

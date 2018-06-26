@@ -5,6 +5,26 @@
 #include "../entities/Player.h"
 #include "../Logger.h"
 #include "../map/Item.h"
+#include "../custom/Event.h"
+
+#include <iostream>
+
+
+void eventLoop() {
+    while (!eventHandler.isEmpty()) {
+        Event* event = eventHandler.pollEvents();
+        if (event->type == Event::Collision) {
+            Tile* tileAt = event->collision->tile;
+            int tileX = tileAt->getPosition().x;
+            int tileY = tileAt->getPosition().y;
+            if (tileX == 5) {
+                printf("test");
+            }
+            logger.info(std::string("Colliding with tile at: ") + std::to_string(tileX) + std::string(", ") + std::to_string(tileY) + "\n");
+        }
+    }
+}
+
 
 // function to check for keyboard input and to move the player accordingly.
 void inputLoop(Player* player, sf::RenderWindow* window, Map map) {
@@ -17,9 +37,7 @@ void inputLoop(Player* player, sf::RenderWindow* window, Map map) {
             else if (event.type == sf::Event::KeyReleased) {
                 int keyCode = event.key.code;
                 if (keyCode == sf::Keyboard::A || keyCode == sf::Keyboard::D || keyCode == sf::Keyboard::W || keyCode == sf::Keyboard::S) {
-                    if (window->hasFocus()) {
-                        player->setWalk(true);
-                    }
+                    player->setWalk(true);
                 }
             }
         }
@@ -39,18 +57,8 @@ void inputLoop(Player* player, sf::RenderWindow* window, Map map) {
     }
 }
 
-void types() {
-    //define Tile types here, doesn't have much use now but forward thinking amirite :( - eventually will be overhaul
-    Type wall("wall");
-    wall.setCollide([] { printf("colliding with wall type\n"); });
-    TM.addType(wall);
-}
-
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "breakout");
-    Logger logger;
-
-    types();
 
     Player player(0, 0, L'@', bt::Color(255, 255, 0));
     Map map;
@@ -66,6 +74,7 @@ int main() {
         inputLoop(&player, &window, map);
         player.update();
         engine.update(player);
+        eventLoop();
     }
     return 0;
 }

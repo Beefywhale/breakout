@@ -7,8 +7,6 @@
 #include "../global.h"
 #include "Inventory.h"
 
-#include <typeinfo>
-
 using namespace bt;
 
 /**

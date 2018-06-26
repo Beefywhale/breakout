@@ -9,7 +9,3 @@ Tile::Tile(int x, int y, wchar_t pCh, Color pColor, bool pSolid) {
     color = pColor;
     solid = pSolid;
 }
-
-void Tile::setType(Type newType) {
-	type = newType;
-}

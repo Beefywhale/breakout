@@ -13,17 +13,17 @@ void Player::safeMove(int x, int y, Map map) {
     if (canWalk) {
         Tile tileAt = map.getTileAt(pos.x + x, pos.y + y);
         if (tileAt.isSolid()) {
-            tileAt.getType().collide();
-            
-            Event newEvent;
-            newEvent.type = Event::Collision;
-            newEvent.collision.tile = tileAt;
-            //eventHandler.addEvent(newEvent);
-        } else {
-            move(x, y);
-            canWalk = false;
-            walkClock.restart();
+            Event* newEvent = new Event();
+            newEvent->type = Event::Collision;
+            newEvent->collision->tile = &tileAt;
+            eventHandler.addEvent(newEvent);
+
         }
+        else {
+            move(x, y);
+        }
+        canWalk = false;
+        walkClock.restart();
     }
 }
 

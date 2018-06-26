@@ -3,7 +3,6 @@
 #include <SFML/Graphics.hpp>
 #include "map/Tile.h"
 #include "entities/Player.h"
-#include "map/Type.h"
 #include "map/Map.h"
 #include "Logger.h"
 
@@ -38,7 +37,7 @@ public:
 	* @param newSize The new size to set the font to.
 	*/
 	void changeFontSize(int newSize);
-
+    
    /**
     * Check if the Engine is still running.
     * @return A boolean which is true if the Engine is still running
@@ -53,5 +52,4 @@ private:
     Map map;
 	Logger logger;
     int fontSize = 16;
-	std::function<void()> updateOverride;
 };
