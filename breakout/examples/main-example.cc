@@ -14,17 +14,13 @@ void eventLoop() {
     while (!eventHandler.isEmpty()) {
         Event* event = eventHandler.pollEvents();
         if (event->type == Event::Collision) {
-            Tile* tileAt = event->collision->tile;
-            int tileX = tileAt->getPosition().x;
-            int tileY = tileAt->getPosition().y;
-            if (tileX == 5) {
-                printf("test");
-            }
+            Tile tileAt = *event->collision->tile;
+            int tileX = tileAt.getPosition().x;
+            int tileY = tileAt.getPosition().y;
             logger.info(std::string("Colliding with tile at: ") + std::to_string(tileX) + std::string(", ") + std::to_string(tileY) + "\n");
         }
     }
 }
-
 
 // function to check for keyboard input and to move the player accordingly.
 void inputLoop(Player* player, sf::RenderWindow* window, Map map) {
