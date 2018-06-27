@@ -4,17 +4,17 @@
 class Item {
 public:
     Item() {}
-    Item(std::string pName);
-    Item(std::string pName, bool pActive, bool pEquipable);
+    Item(std::string name);
+    Item(std::string name, bool active, bool equipable);
 
-    void setActive(bool pActive);
-    void setEquipable(bool pEquipable);
+    void setActive(bool active);
+    void setEquipable(bool equipable);
 
-    std::string getName() { return name; }
-    bool isActive() { return active; }
-    bool isEquipable() { return equipable; }
+    std::string getName() { return m_name; }
+    bool isActive() { return m_active; }
+    bool isEquipable() { return m_equipable; }
 private:
-    std::string name;
-    bool active;
-    bool equipable;
+    std::string m_name;
+    bool m_active;
+    bool m_equipable;
 };

@@ -17,27 +17,27 @@ public:
    /**
     * Default constructor for Player.
     */
-    Player();
+    Player() {}
 
    /**
 	* Create a new Player at an x and y position, with text and a color.
 	* @param x Player's starting x position.
 	* @param y Player's starting y position.
-	* @param pCh Player's text representing them in-game.
-	* @param pColor Color of the Player's text.
+	* @param ch Player's text representing them in-game.
+	* @param color Color of the Player's text.
 	*/
-    Player(int x, int y, wchar_t pCh, Color pColor) : Actor(x, y, pCh, pColor) {}
+    Player(int x, int y, wchar_t ch, Color color) : Actor(x, y, ch, color) {}
 
    /**
     * Called every game loop, used for input and collision detection.
     */
-	void update();
+	void update() override;
 
    /**
 	* Set whether the player can walk or not.
-	* @param pWalk A bool to set if the player can walk.
+	* @param walk A bool to set if the player can walk.
 	*/
-	void setWalk(bool pWalk);
+	void setWalk(bool walk);
    
     /**
      * Move the Player while checking collision and timings.

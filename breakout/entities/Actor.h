@@ -12,7 +12,8 @@ public:
     /**
      * Default constructor for Actor.
      */
-    Actor();
+    Actor() {}
+	~Actor() {}
     
     /**
 	 * Position struct with x and y members for coordinates.
@@ -26,10 +27,10 @@ public:
 	 * Create a new Actor at an x and y position, with text and a color.
 	 * @param x Actor's starting x position.
 	 * @param y Actor's starting y position.
-	 * @param pCh Actor's text representing them in-game.
-	 * @param pColor Color of the Actor's text.
+	 * @param ch Actor's text representing them in-game.
+	 * @param color Color of the Actor's text.
 	 */
-    Actor(int x, int y, wchar_t pCh, Color pColor);
+    Actor(int x, int y, wchar_t ch, Color color);
 
    /**
 	* Get the Actor's current x and y position.
@@ -41,20 +42,13 @@ public:
 	* Get the current text representing the Actor.
 	* @return the character of the Actor.
 	*/
-    wchar_t getChar() { return ch; }
+    wchar_t getChar() { return m_ch; }
 
    /**
 	* Get the current BColor of the Actor.
 	* @return The color of the Actor.
 	*/
-	Color getColor() { return color; }
-
-   /**
-	* Move the Actor to a new x and y position.
-	* @param x new position on the x axis for the Actor.
-	* @param y new position on the y axis for the Actor.
-	*/
-    void setPosition(int x, int y);
+	Color getColor() { return m_color; }
 
    /**
 	* Move the Actor by an offset.
@@ -82,11 +76,23 @@ public:
 	* Get the Actor's sight radius.
 	* @return The Actor's sight radius.
 	*/
-	int getSight() { return radius; }
+	int sight() { return m_radius; }
+
+   /**
+	* Move the Actor to a new x and y position.
+	* @param x new position on the x axis for the Actor.
+	* @param y new position on the y axis for the Actor.
+	*/
+    void setPosition(int x, int y);
+
+
+	void setSightRadius(int radius);
+
 private:
-    wchar_t ch;
-    Color color;
-	int radius = 3; // eventually won't be a constant
+    wchar_t m_ch;
+    Color m_color;
+	int m_radius = 3;
+
 protected:
    /**
 	* Position of Actor on X and Y using the position struct.

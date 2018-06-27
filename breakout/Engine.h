@@ -15,10 +15,10 @@ public:
 
    /**
 	* Preload variables and objects.
-	* @param pWindow A RenderWindow* to draw to.
-	* @param pMap A Map to get the Tiles from.
+	* @param window A RenderWindow* to draw to.
+	* @param map A Map to get the Tiles from.
 	*/
-	Engine(sf::RenderWindow* pWindow, Map pMap);
+	Engine(sf::RenderWindow* window, Map map);
     
    /**
 	* The game loop.
@@ -30,7 +30,7 @@ public:
 	* Get the current Map.
 	* @return the Engine's Map.
 	*/
-	Map getMap() { return map; }
+	Map getMap() { return m_map; }
 
    /**
 	* Change the font rendering size.
@@ -42,14 +42,14 @@ public:
     * Check if the Engine is still running.
     * @return A boolean which is true if the Engine is still running
     */
-	bool isRunning() { return window->isOpen(); }
+	bool isRunning() { return m_window->isOpen(); }
 private:
-    sf::RenderWindow* window;
+    sf::RenderWindow* m_window;
     sf::Font font;
     sf::Text tileRender;
     sf::Text playerRender;
 	sf::Text zombieRender;
-    Map map;
+    Map m_map;
 	Logger logger;
     int fontSize = 16;
 };

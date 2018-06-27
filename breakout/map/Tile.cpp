@@ -1,11 +1,13 @@
 #include "Tile.h"
 
-Tile::Tile() {}
+Tile::Tile(int x, int y, wchar_t ch, Color color) : Actor(x, y, ch, color) {
+    m_solid = false;
+}
 
-Tile::Tile(int x, int y, wchar_t pCh, Color pColor, bool pSolid) {
-    pos.x = x;
-    pos.y = y;
-    ch = pCh;
-    color = pColor;
-    solid = pSolid;
+void Tile::setType(std::string type) {
+    m_type = type;
+}
+
+void Tile::setSolid(bool solid) {
+    m_solid = solid;
 }

@@ -1,8 +1,8 @@
 #include "Engine.h"
 
-Engine::Engine(sf::RenderWindow* pWindow, Map pMap) {
-    window = pWindow;
-    map = pMap;
+Engine::Engine(sf::RenderWindow* window, Map map) {
+    m_window = window;
+    m_map = map;
 	sf::err().rdbuf(0);
 
 
@@ -21,13 +21,13 @@ Engine::Engine(sf::RenderWindow* pWindow, Map pMap) {
 }
 
 void Engine::update(Player player) {
-    window->clear();
+    m_window->clear();
 
-    for (auto tilePair : map.getTiles()) {
+    for (auto tilePair : m_map.getTiles()) {
         Tile i = tilePair.second;
 	    tileRender.setFillColor(sf::Color(i.getColor().red, i.getColor().green, i.getColor().blue));
 
-		if (player.distance(i.getPosition().x, i.getPosition().y, player.getPosition().x, player.getPosition().y) > player.getSight()) {
+		if (player.distance(i.getPosition().x, i.getPosition().y, player.getPosition().x, player.getPosition().y) > player.sight()) {
 			tileRender.setFillColor(sf::Color(i.getColor().red - 150, i.getColor().green - 150, i.getColor().blue - 150));
 		}
 
@@ -40,7 +40,7 @@ void Engine::update(Player player) {
 							   i.getPosition().y * (fontSize - 2)
 							  );
 
-	    window->draw(tileRender);
+	    m_window->draw(tileRender);
 	}
 
 	playerRender.setFillColor(sf::Color(player.getColor().red, player.getColor().green, player.getColor().blue));
@@ -49,9 +49,9 @@ void Engine::update(Player player) {
 							 player.getPosition().y * (fontSize - 2)
 							);
 
-    window->draw(playerRender);
+    m_window->draw(playerRender);
 
-    window->display();
+    m_window->display();
 }
 
 

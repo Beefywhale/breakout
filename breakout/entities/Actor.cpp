@@ -1,22 +1,10 @@
 #include "Actor.h"
 
-Actor::Actor() {
-    pos.x = 0;
-    pos.y = 0;
-    ch = L'@';
-}
-
-Actor::Actor(int x, int y, wchar_t pCh, Color pColor) {
+Actor::Actor(int x, int y, wchar_t ch, Color color) {
     pos.x = x;
     pos.y = y;
-    ch = pCh;
-    color = pColor;
-}
-
-void Actor::setPosition(int x, int y) {
-    pos.x = x;
-    pos.y = y;
-    color = Color(255,255,255);
+    m_ch = ch;
+    m_color = color;
 }
 
 void Actor::move(int x, int y) {
@@ -25,5 +13,15 @@ void Actor::move(int x, int y) {
 }
 
 int Actor::distance(int startX, int startY, int targetX, int targetY) {
-	return sqrt(pow((targetX - startX), 2) + pow((targetY - startY), 2));
+	return static_cast<int>(sqrt(pow((targetX - startX), 2) + pow((targetY - startY), 2)));
+}
+
+void Actor::setPosition(int x, int y) {
+    pos.x = x;
+    pos.y = y;
+    m_color = Color(255,255,255);
+}
+
+void Actor::setSightRadius(int radius) {
+    m_radius = radius;
 }

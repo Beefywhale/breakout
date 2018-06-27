@@ -1,20 +1,20 @@
 #include "Item.h"
 
-Item::Item(std::string pName) {
-    name = pName;
+Item::Item(std::string name) {
+    m_name = name;
 }
 
-Item::Item(std::string pName, bool pActive, bool pEquipable) {
-    name = pName;
-    active = pActive;
-    equipable = pEquipable;
+Item::Item(std::string name, bool active, bool equipable) {
+    m_name = name;
+    m_active = active;
+    m_equipable = equipable;
 }
 
-void Item::setActive(bool pActive) {
-    active = pActive;
+void Item::setActive(bool active) {
+    m_active = active;
 }
 
-void Item::setEquipable(bool pEquipable) {
-    equipable = pEquipable;
+void Item::setEquipable(bool equipable) {
+    m_equipable = equipable;
 }
 
