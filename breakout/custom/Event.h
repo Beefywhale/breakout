@@ -1,5 +1,6 @@
 #pragma once
 #include "../map/Tile.h"
+#include <memory>
 
 class Event {
 public:
@@ -8,7 +9,7 @@ public:
     Event(const Event&) {}
 
     struct CollisionEvent {
-        Tile* tile;
+        std::shared_ptr<Tile> tile;
     
         CollisionEvent() {}
         ~CollisionEvent() {}
@@ -24,6 +25,6 @@ public:
     EventType type;
 
     union {
-        CollisionEvent* collision = new CollisionEvent;
+        CollisionEvent* collision = new CollisionEvent();
     };
 };

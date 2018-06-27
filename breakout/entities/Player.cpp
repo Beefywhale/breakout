@@ -15,7 +15,8 @@ void Player::safeMove(int x, int y, Map map) {
         if (tileAt.isSolid()) {
             Event* newEvent = new Event();
             newEvent->type = Event::Collision;
-            newEvent->collision->tile = &tileAt;
+            std::shared_ptr<Tile> newTile = std::make_shared<Tile>(tileAt);
+            newEvent->collision->tile = newTile;
             eventHandler.addEvent(newEvent);
 
         }
