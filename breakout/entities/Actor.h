@@ -4,6 +4,19 @@
 #include "../custom/Color.h"
 using namespace bt;
 
+/* Struct: position
+	Position struct with x and y fields.
+	   
+	Fields:
+	    x - Actor x position.
+		y - Actor y position.
+*/
+struct position {
+    int x;
+    int y;
+};
+
+
 // Class: Actor
 // A class used for in-game actors.
 class Actor {
@@ -31,18 +44,6 @@ public:
           color - <Color> of the text.
 	*/
     Actor(int x, int y, wchar_t ch, Color color);
-
-	/* Struct: position
-	   Position struct with x and y fields.
-	   
-	   Fields:
-	      x - Actor x position.
-		  y - Actor y position.
-	*/
-	struct position {
-    	int x;
-    	int y;
-    };
 
    /**
 	* Get the Actor's current x and y position.
