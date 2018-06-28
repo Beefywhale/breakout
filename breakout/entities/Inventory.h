@@ -13,9 +13,9 @@ public:
 
     std::vector<Item> getItemsNamed(std::string item);
 
-    std::map<std::string, std::vector<Item>> getItems() { return items; }
+    std::map<std::string, std::vector<Item> > getItems() { return items; }
     
 private:
-    std::map<std::string, std::vector<Item>> items;
+    std::map<std::string, std::vector<Item> > items;
 };
 
