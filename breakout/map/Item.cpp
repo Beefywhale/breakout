@@ -1,13 +1,9 @@
 #include "Item.h"
 
-Item::Item(std::string name) {
-    m_name = name;
-}
-
-Item::Item(std::string name, bool active, bool equipable) {
-    m_name = name;
-    m_active = active;
-    m_equipable = equipable;
+Item::Item() {
+    m_active = true;
+    m_equipable = true;
+    m_name = "";
 }
 
 void Item::setActive(bool active) {
@@ -18,3 +14,6 @@ void Item::setEquipable(bool equipable) {
     m_equipable = equipable;
 }
 
+void Item::setName(std::string name) {
+    m_name = name;
+}

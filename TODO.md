@@ -5,6 +5,5 @@
 - [ ] Add a `Type` system.
 - [ ] Menu framework.
 - [ ] Improve `Inventory`.
-- [ ] Document `Event` and `EventHandler`.
-- [x] Fix `Event` system.
+- [x] Document `Event` and `EventHandler`.
 - [ ] Add more events and event triggers.
