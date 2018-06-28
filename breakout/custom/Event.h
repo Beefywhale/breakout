@@ -5,15 +5,9 @@
 class Event {
 public:
     Event() {}
-    ~Event() {}
-    Event(const Event&) {}
 
     struct CollisionEvent {
         std::shared_ptr<Tile> tile;
-    
-        CollisionEvent() {}
-        ~CollisionEvent() {}
-        CollisionEvent(const CollisionEvent&) {}
     };
 
     enum EventType {
