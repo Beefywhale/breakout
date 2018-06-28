@@ -1,29 +1,36 @@
 #pragma once
 
-/**
-* @brief bt namespace.
-*/
 namespace bt {
-    /**
-    * @brief Color.
-    */
+    // Class: Color
+    // A class for RGB colors.
     class Color {
         public:
-           /**
-            * Default constructor for Color.
-            */
+            // Group: Functions
+
+            // Constructor: Color
+            // Default constructor.
             Color() {}
-           
-           /**
-            * Create a new Color with rgb colors.
-            * @param r Red color ranging from 0 to 255.
-            * @param g Green color ranging from 0 to 255.
-            * @param b Blue color ranging from 0 to 255.
+
+            /* Constructor: Color
+               Init a Color with three values of color (rgb).
+
+               Parameters: 
+                  r - int ranging from 0 to 255.
+                  g - int ranging from 0 to 255.
+                  b - int ranging from 0 to 255.
             */
             Color(int r, int g, int b);
            
+            // Variable: red
+            // the amount of red color as an int ranging from 0-255.
             int red;
+
+            // Variable: green
+            // the amount of green color as an int ranging from 0-255.
             int green;
+
+            // Variable: blue
+            // the amount of blue color as an int ranging from 0-255.
             int blue;
     };
 }

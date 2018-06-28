@@ -3,6 +3,7 @@
 Engine::Engine(sf::RenderWindow* window, Map map) {
     m_window = window;
     m_map = map;
+	fontSize = 16;
 	sf::err().rdbuf(0);
 
 

@@ -7,20 +7,22 @@
 #include "Tile.h"
 #include "../Logger.h"
 
-/**
-* @brief Map.
-*/
+// Class: Map
+// A map of <Tile>.
 class Map {
 public:
-    /**
-     * Default constructor for Map.
-     */
+    // Group: Functions
+
+    // Contructor: Map
+    // Default contructor.
     Map();
 	
-   /**
-	* Get all of the Map's Tiles in a std::map.
-	* @return a std::map with x,y pair key and Tile value.
-	*/
+    /* Function: getTiles()
+       Get all of the Map <Tile>s in an std::map.
+       
+       Returns:
+          An std::map with x,y pair keys and <Tile> values.
+    */
     std::map<std::pair<int, int>, Tile> getTiles() { return tileMap; }
 
    /**
@@ -29,10 +31,30 @@ public:
 	* @param y The y coordinate of the tile you want.
 	* @return The Tile at the x and y coordinates.
 	*/
+    /* Function: getTileAt
+       Get a <Tile> at a specific set of coordinates.
+
+       Parameters:
+          x - The x coordinate of the <Tile>.
+          y - The y coordinate of the <Tile>.
+       
+       Returns:
+          The <Tile> at the x and y coordinates given.
+        
+       See Also:
+          <Tile>
+    */
     Tile getTileAt(int x, int y);
 
 private:
+    // Group: Private Variables
+
+    // Variable: tileMap
     std::map<std::pair<int, int>, Tile> tileMap;
+
+    // Variable: it
     std::map<std::pair<int, int>, Tile>::iterator it;
+    
+    // Variable: logger    
     Logger logger;
 };

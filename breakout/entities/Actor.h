@@ -4,24 +4,15 @@
 #include "../custom/Color.h"
 using namespace bt;
 
-/**
-* @brief Actor.
-*/
+// Class: Actor
+// A class used for in-game actors.
 class Actor {
 public:
-    /**
-     * Default constructor for Actor.
-     */
+	// Group: Functions
+
+	// Constructor: Actor
+	// Default constructor.
     Actor() {}
-	~Actor() {}
-    
-    /**
-	 * Position struct with x and y members for coordinates.
-	 */
-	 struct position {
-        int x; /**< Actor's position on the X axis. */
-        int y; /**< Actor's position on the Y axis. */
-    };
 
     /**
 	 * Create a new Actor at an x and y position, with text and a color.
@@ -30,23 +21,60 @@ public:
 	 * @param ch Actor's text representing them in-game.
 	 * @param color Color of the Actor's text.
 	 */
+	/* Constructor: Actor
+	   Init a Player at an x and y position, with text and color.
+
+	   Parameters:
+          x - starting x position.
+          y - starting y position.
+          ch - Player text char.
+          color - <Color> of the text.
+	*/
     Actor(int x, int y, wchar_t ch, Color color);
+
+	/* Struct: position
+	   Position struct with x and y fields.
+	   
+	   Fields:
+	      x - Actor x position.
+		  y - Actor y position.
+	*/
+	struct position {
+    	int x;
+    	int y;
+    };
 
    /**
 	* Get the Actor's current x and y position.
 	* @return A position struct with the Actor's current x and y position.
 	*/
+	/* Function: getPosition
+	   Get the Actor position.
+
+	   Returns:
+	      The current Actor position.
+
+	   See Also:
+	      <position> 
+	*/
 	position getPosition() { return pos; }
 
-   /**
-	* Get the current text representing the Actor.
-	* @return the character of the Actor.
+	/* Function: getChar
+	   Get the Actor text char.
+
+	   Returns:
+	      The Actor char. 
 	*/
     wchar_t getChar() { return m_ch; }
 
-   /**
-	* Get the current BColor of the Actor.
-	* @return The color of the Actor.
+	/* Function: getColor
+	   Get the Actor color.
+
+	   Returns:
+	      The Actor color.
+
+	   See Also:
+	      <Color>
 	*/
 	Color getColor() { return m_color; }
 
@@ -55,47 +83,70 @@ public:
 	* @param x amount to offset the Actor on the x axis.
 	* @param y amount to offset the Actor on the y axis.
 	*/
+	/* Function: move
+	   Move Actor by an offset.
+
+	   Parameters:
+	      x - offset to add to the current x position.   
+          y - offset to add to the current y position.
+	*/
     void move(int x, int y);
 
-   /**
-	* Update the Actor every game loop.
-	*/
-	virtual void update() {};
+	//Function: Update
+    //Called every frame of the game.
+	virtual void update() {}
 
-   /**
-	* Calculate the distance between two sets of coordinates.
-	* @param startX starting x position.
-	* @param startY starting y position.
-	* @param targetX the target's x position.
-	* @param targetY the target's y position.
-	* @return The calculated distance between the two sets of coordinates.
+	/* Function: distance
+	   Calculate the distance between two sets of coordinates.
+
+	   Parameters:
+	      startX - starting x position.
+	      startY - starting y position.
+	      targetX - target x position.
+	      targetX - target x position.
 	*/
 	int distance(int startX, int startY, int targetX, int targetY);
 
-   /**
-	* Get the Actor's sight radius.
-	* @return The Actor's sight radius.
+	/* Function: sight
+	   Get the Actor sight radius.
+
+	   Returns:
+	      The Actor sight radius.
 	*/
 	int sight() { return m_radius; }
 
-   /**
-	* Move the Actor to a new x and y position.
-	* @param x new position on the x axis for the Actor.
-	* @param y new position on the y axis for the Actor.
+	/* Function: setPosition
+	   Move Actor to a desired x and y position.
+
+	   Parameters:
+	      x - position on the X axis.
+	      y - position on the Y axis.
 	*/
     void setPosition(int x, int y);
 
+	/* Function: setSightRadius
+	   Set Actor sight radius.
 
+	   Parameters:
+	      radius - The new sight radius.
+	*/
 	void setSightRadius(int radius);
 
 private:
+	//Group: Private Variables
+	
+	// Variable: m_ch
     wchar_t m_ch;
+
+	// Variable: m_color
     Color m_color;
+
+	// Variable: m_radius	
 	int m_radius = 3;
 
 protected:
-   /**
-	* Position of Actor on X and Y using the position struct.
-	*/
+	// Group: Protected Variables
+
+	// Variable: pos
     position pos;
 };

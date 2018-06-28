@@ -6,50 +6,82 @@
 #include "map/Map.h"
 #include "Logger.h"
 
-/**
-* @brief Engine.
-*/
+// Class: Engine
+// A class for handling drawing and putting classes together.
 class Engine {
 public:
+    // Group: Functions
+
+	// Constructor: Engine
+	// Default constructor.
     Engine() {}
 
-   /**
-	* Preload variables and objects.
-	* @param window A RenderWindow* to draw to.
-	* @param map A Map to get the Tiles from.
+	/* Constructor: Engine
+	   Init variables and objects.
+
+	   Parameters:
+	      window - The SFML window to draw to.
+		  map - The current <Map>.
 	*/
 	Engine(sf::RenderWindow* window, Map map);
     
-   /**
-	* The game loop.
-    * @param player The current player.
+
+	/* Function: update
+       The main game loop, called every frame.
+       Used to update positions and draw tiles.
+
+       Parameters:
+          player - The <Player> to draw.
 	*/
 	void update(Player player);
 
-   /**
-	* Get the current Map.
-	* @return the Engine's Map.
+    /* Function: getMap
+	   get the Engine <Map>.
+
+	   Returns:
+	      The Engine <Map>.
 	*/
 	Map getMap() { return m_map; }
+    
+	/* Function: changeFontSize
+	   change the size of the Engine font.
 
-   /**
-	* Change the font rendering size.
-	* @param newSize The new size to set the font to.
+	   Parameters:
+	      newSize - the new size to make the font.
 	*/
 	void changeFontSize(int newSize);
     
-   /**
-    * Check if the Engine is still running.
-    * @return A boolean which is true if the Engine is still running
+    /* Function: isRunning
+	   Check if Engine is running.
+       
+	   Returns:
+	      A boolean which is true if Engine is running.
     */
 	bool isRunning() { return m_window->isOpen(); }
 private:
+	// Group: Private Variables
+
+	// Variable: m_window
+	// The SFML window Engine draws to.
     sf::RenderWindow* m_window;
+
+	// Variable: font
+	// The font Engine uses to display text. 
     sf::Font font;
+
+	// Variable: tileRender
     sf::Text tileRender;
+
+	// Variable: playerRender
     sf::Text playerRender;
+
+	// Variable: zombieRender
 	sf::Text zombieRender;
+
+	// Variable: m_map
+	// The <Map> Engine gets the <Tile>s from.
     Map m_map;
+
 	Logger logger;
-    int fontSize = 16;
+    int fontSize;
 };
