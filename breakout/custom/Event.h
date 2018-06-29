@@ -2,11 +2,9 @@
 #include "../map/Tile.h"
 #include <memory>
 
-// Class: Event
-// A class for handling events.
 class Event {
 public:
-    /* Struct: CollisionEvent
+    /* Struct: Event::CollisionEvent
        An event triggered on collisions with <Tile>s.
 
        Fields:
@@ -15,6 +13,9 @@ public:
     struct CollisionEvent {
         std::shared_ptr<Tile> tile;
     };
+
+    // Class: Event
+    // A class for handling events.
 
     // Group: Functions
 
@@ -36,7 +37,7 @@ public:
 
     // Group: Variables
 
-    // Variable: type
+    // Variable: Event
     // The event type.
     EventType type;
 };

@@ -4,22 +4,22 @@
 #include "../custom/Color.h"
 using namespace bt;
 
+/* Struct: Actor::position
+	Position struct with x and y fields.
+		
+	Fields:
+		x - Actor x position.
+		y - Actor y position.
+*/
+struct position {
+	int x;
+	int y;
+};
+
 // Class: Actor
 // A class used for in-game actors.
 class Actor {
 public:
-	/* Struct: position
-		Position struct with x and y fields.
-		
-		Fields:
-			x - Actor x position.
-			y - Actor y position.
-	*/
-	struct position {
-		int x;
-		int y;
-	};
-
 	// Group: Functions
 
 	// Constructor: Actor
