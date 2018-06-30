@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "../entities/Actor.h"
+#include "Type.h"
 using namespace bt;
 
 // Class: Tile
@@ -59,6 +60,12 @@ public:
 	      <solid>
 	*/
 	void setSolid(bool solid);
+
+	// Group: Public Variables
+
+	// Variable: type
+	Type* type;
+
 private:
     // Group: Private Variables
     

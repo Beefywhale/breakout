@@ -28,8 +28,9 @@ void Engine::update(Player player) {
         Tile i = tilePair.second;
 	    tileRender.setFillColor(sf::Color(i.getColor().red, i.getColor().green, i.getColor().blue));
 
+		//draw darker color
 		if (player.distance(i.getPosition().x, i.getPosition().y, player.getPosition().x, player.getPosition().y) > player.sight()) {
-			tileRender.setFillColor(sf::Color(i.getColor().red - 150, i.getColor().green - 150, i.getColor().blue - 150));
+			tileRender.setFillColor(sf::Color((i.getColor().red - 150)%150, (i.getColor().green - 150)%150, (i.getColor().blue - 150)%150));
 		}
 
 		if (i.getPosition().x == player.getPosition().x && i.getPosition().y == player.getPosition().y) {

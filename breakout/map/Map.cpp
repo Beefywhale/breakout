@@ -4,15 +4,21 @@ Map::Map() {
 	for (int i = 0; i < 15; i++) {
 		for (int j = 0; j < 15; j++) {
 			Tile newTile(i, j, L'.', bt::Color(255, 255, 255));
-			tileMap.insert(std::make_pair(std::make_pair(i, j), newTile));
+			tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
 		}
 	}
 
 	for (int x = 0; x < 15; x++) {
 		Tile newTile(x, 15, L'#', bt::Color(255,255,255));
 		newTile.setSolid(true);
-		tileMap.insert(std::make_pair(std::make_pair(x, 15), newTile));
+		newTile.type->type = Type::Wall;
+		tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
 	}
+
+	Tile newTile(15, 5, L'|', bt::Color(255,0,255));
+	newTile.setSolid(true);
+	newTile.type->type = Type::Door;
+	tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
 }
 
 Tile Map::getTileAt(int x, int y) {

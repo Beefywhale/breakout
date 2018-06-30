@@ -9,7 +9,6 @@
 
 #include <iostream>
 
-
 void eventLoop() {
     while (!eventHandler.isEmpty()) {
         Event* event = eventHandler.pollEvents();
@@ -18,6 +17,9 @@ void eventLoop() {
             int tileX = tileAt.getPosition().x;
             int tileY = tileAt.getPosition().y;
             logger.info(std::string("Colliding with tile at: ") + std::to_string(tileX) + std::string(", ") + std::to_string(tileY) + "\n");
+            if (tileAt.type->type == Type::Door) {
+                logger.info("Colliding with a door");
+            }
         }
     }
 }
