@@ -15,7 +15,20 @@ Map::Map() {
 		tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
 	}
 
-	Tile newTile(15, 5, L'|', bt::Color(255,0,255));
+	for (int k = 0; k < 5; k++) {
+		Tile newTile(15, k, L'#', bt::Color(255,255,255));
+		newTile.setSolid(true);
+		newTile.type->type = Type::Wall;
+		tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
+	}
+	for (int k = 6; k < 16; k++) {
+		Tile newTile(15, k, L'#', bt::Color(255,255,255));
+		newTile.setSolid(true);
+		newTile.type->type = Type::Wall;
+		tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
+	}
+
+	Tile newTile(15, 5, 240, bt::Color(255,0,255));
 	newTile.setSolid(true);
 	newTile.type->type = Type::Door;
 	tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
