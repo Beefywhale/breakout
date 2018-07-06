@@ -7,6 +7,10 @@
 docs/
 ND Config
 
+#maps
+saves/
+maps/
+
 #font
 font.ttf
 
