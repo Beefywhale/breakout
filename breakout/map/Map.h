@@ -2,10 +2,15 @@
 #include <vector>
 #include <map>
 #include <utility>
-#include "../global.h"
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include "../libs/json.hpp"
 #include <SFML/Graphics.hpp>
+#include "../global.h"
 #include "Tile.h"
 #include "../Logger.h"
+using json = nlohmann::json;
 
 // Class: Map
 // A map of <Tile>.
@@ -46,6 +51,9 @@ public:
     */
     Tile getTileAt(int x, int y);
 
+    void load(std::string path);
+    void save(std::string path);
+
 private:
     // Group: Private Variables
 
@@ -57,4 +65,23 @@ private:
     
     // Variable: logger    
     Logger logger;
+
+    // Variable: m_path
+    std::string m_path;
+
+    // Variable: data
+    json data;
+
+    // Variable: typeMap;
+    std::map<std::string, Type::Types> string2Type {
+        std::make_pair("floor", Type::Floor),
+		std::make_pair("door", Type::Door),
+		std::make_pair("wall", Type::Wall)
+	};
+
+    std::map<Type::Types, std::string> type2String {
+        std::make_pair(Type::Floor, "floor"),
+		std::make_pair(Type::Door, "door"),
+		std::make_pair(Type::Wall, "wall")
+	};
 };

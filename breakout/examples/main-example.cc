@@ -60,6 +60,8 @@ int main() {
 
     Player player(0, 0, L'@', bt::Color(255, 255, 0));
     Map map;
+    map.load("maps/test.json");
+
     Engine engine(&window, map);
 
     // example for printing player inventory with number of items with the name, EX: (2) Apple
