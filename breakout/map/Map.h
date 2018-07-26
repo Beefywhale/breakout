@@ -20,7 +20,7 @@ public:
 
     // Contructor: Map
     // Default contructor.
-    Map();
+    Map() {};
 	
     /* Function: getTiles()
        Get all of the Map <Tile>s in an std::map.
@@ -51,8 +51,8 @@ public:
     */
     Tile getTileAt(int x, int y);
 
-    void load(std::string path);
-    void save(std::string path);
+    void load(const std::string path);
+    void save(const std::string path);
 
 private:
     // Group: Private Variables
@@ -72,7 +72,7 @@ private:
     // Variable: data
     json data;
 
-    // Variable: typeMap;
+    // Variable: typeMap
     std::map<std::string, Type::Types> string2Type {
         std::make_pair("floor", Type::Floor),
 		std::make_pair("door", Type::Door),
@@ -84,4 +84,12 @@ private:
 		std::make_pair(Type::Door, "door"),
 		std::make_pair(Type::Wall, "wall")
 	};
+
+    // Variable: mapData
+    struct {
+        struct {
+            int x;
+            int y;
+        } spawnpoint;
+    } mapData;
 };

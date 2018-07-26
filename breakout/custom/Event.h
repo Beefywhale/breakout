@@ -1,6 +1,8 @@
 #pragma once
+
 #include "../map/Tile.h"
 #include <memory>
+class Player;
 
 class Event {
 public:
@@ -14,6 +16,11 @@ public:
         std::shared_ptr<Tile> tile;
     };
 
+    struct PlayerMoveEvent {
+        std::shared_ptr<Player*> player;
+        std::shared_ptr<Tile> movedTile;
+    };
+
     // Class: Event
     // A class for handling events.
 
@@ -21,19 +28,19 @@ public:
 
     // Constructor: Event
     // Default constructor.
-    Event() {}
+    Event() {};
 
     //? Should I document this?
     enum EventType {
         Collision,
+        PlayerMove,
         
         Count
     };
 
     //? Should I document this?
-    union {
-        CollisionEvent* collision = new CollisionEvent();
-    };
+    CollisionEvent* collision = new CollisionEvent();
+    PlayerMoveEvent* playerMove = new PlayerMoveEvent();
 
     // Group: Variables
 

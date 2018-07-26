@@ -19,7 +19,23 @@ void eventLoop() {
             logger.info(std::string("Colliding with tile at: ") + std::to_string(tileX) + std::string(", ") + std::to_string(tileY) + "\n");
             if (tileAt.type->type == Type::Door) {
                 logger.info("Colliding with a door");
+                if (tileAt.type->door.open) {
+                    tileAt.type->door.open = false;
+                    tileAt.setSolid(true);
+                    logger.plaintext("door was open");
+                } else {
+                    tileAt.type->door.open = true;
+                    tileAt.setSolid(false); 
+                }
             }
+        } else if (event->type == Event::PlayerMove) {
+            Tile tileAt = *event->playerMove->movedTile;
+            int tileX = tileAt.getPosition().x;
+            int tileY = tileAt.getPosition().y;
+            Player* playerAt = *event->playerMove->player;
+            int playerX = playerAt->getPosition().x;
+            int playerY = playerAt->getPosition().y;
+            logger.info("Player moved from: " + std::to_string(playerX) + std::string(",") + std::to_string(playerY) + " to: " + std::to_string(tileX) + std::string(",") + std::to_string(tileY) + "\n");
         }
     }
 }
@@ -70,11 +86,10 @@ int main() {
     }
 
     while (engine.isRunning()) { //game loop
-        
+        eventLoop();        
         inputLoop(&player, &window, map);
         player.update();
         engine.update(player);
-        eventLoop();
     }
     return 0;
 }
