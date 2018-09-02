@@ -1,4 +1,4 @@
-#include "Logger.h"
+#include "Logger.hpp"
 
 void Logger::error(std::string err) {
 	std::time_t t = std::time(0);

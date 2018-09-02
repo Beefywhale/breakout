@@ -1,10 +1,10 @@
 #pragma once
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include "map/Tile.h"
-#include "entities/Player.h"
-#include "map/Map.h"
-#include "Logger.h"
+#include "map/Tile.hpp"
+#include "entities/Player.hpp"
+#include "map/Map.hpp"
+#include "Logger.hpp"
 
 // Class: Engine
 // A class for handling drawing and putting classes together.

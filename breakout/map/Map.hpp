@@ -7,9 +7,9 @@
 #include <iomanip>
 #include "../libs/json.hpp"
 #include <SFML/Graphics.hpp>
-#include "../global.h"
-#include "Tile.h"
-#include "../Logger.h"
+#include "../global.hpp"
+#include "Tile.hpp"
+#include "../Logger.hpp"
 using json = nlohmann::json;
 
 // Class: Map

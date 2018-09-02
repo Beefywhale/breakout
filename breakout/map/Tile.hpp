@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "../entities/Actor.h"
-#include "Type.h"
+#include "../entities/Actor.hpp"
+#include "Type.hpp"
 using namespace bt;
 
 // Class: Tile

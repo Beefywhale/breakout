@@ -1,4 +1,4 @@
-#include "Engine.h"
+#include "Engine.hpp"
 
 Engine::Engine(sf::RenderWindow* window, Map map) {
     m_window = window;

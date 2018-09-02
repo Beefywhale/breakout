@@ -1,11 +1,11 @@
 #pragma once
 #include <memory>
 #include <SFML/Graphics.hpp>
-#include "Actor.h"
-#include "../map/Map.h"
-#include "../custom/Color.h"
-#include "../global.h"
-#include "Inventory.h"
+#include "Actor.hpp"
+#include "../map/Map.hpp"
+#include "../custom/Color.hp"
+#include "../global.hpp"
+#include "Inventory.hpp"
 
 using namespace bt;
 

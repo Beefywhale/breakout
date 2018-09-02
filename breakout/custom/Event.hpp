@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../map/Tile.h"
+#include "../map/Tile.hpp"
 #include <memory>
 class Player;
 

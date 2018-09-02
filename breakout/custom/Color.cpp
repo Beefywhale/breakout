@@ -1,4 +1,4 @@
-#include "Color.h"
+#include "Color.hpp"
 using namespace bt;
 
 Color::Color(int r, int g, int b) {

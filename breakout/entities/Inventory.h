@@ -2,7 +2,7 @@
 #include <map>
 #include <vector>
 #include <string>
-#include "../map/Item.h"
+#include "../map/Item.hpp"
 
 // Class: Inventory
 // A class for handling <Item>s
@@ -54,4 +54,3 @@ private:
     // Variable: items
     std::map<std::string, std::vector<Item> > items;
 };
-
