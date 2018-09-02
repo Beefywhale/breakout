@@ -1,4 +1,4 @@
-#include "Map.h"
+#include "Map.hpp"
 
 Tile Map::getTileAt(int x, int y) {
     it = tileMap.find(std::make_pair(x, y));

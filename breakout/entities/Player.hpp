@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Actor.hpp"
 #include "../map/Map.hpp"
-#include "../custom/Color.hp"
+#include "../custom/Color.hpp"
 #include "../global.hpp"
 #include "Inventory.hpp"
 
