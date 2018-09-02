@@ -14,7 +14,7 @@ namespace bt {
             /* Constructor: Color
                Init a Color with three values of color (rgb).
 
-               Parameters: 
+               Parameters:
                   r - int ranging from 0 to 255.
                   g - int ranging from 0 to 255.
                   b - int ranging from 0 to 255.
@@ -34,4 +34,3 @@ namespace bt {
             int blue;
     };
 }
-

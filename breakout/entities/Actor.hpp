@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <math.h>
-#include "../custom/Color.h"
+#include "../custom/Color.hpp"
 using namespace bt;
 
 /* Struct: Actor::position

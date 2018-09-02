@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "Player.hpp"
 
 void Player::update() {
     if (static_cast<int>(walkClock.getElapsedTime().asMilliseconds() >= 100)) {

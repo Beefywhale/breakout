@@ -1,4 +1,4 @@
-#include "global.h"
+#include "global.hpp"
 
 EventHandler eventHandler;
 Logger logger;

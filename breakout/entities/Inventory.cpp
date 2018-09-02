@@ -1,4 +1,4 @@
-#include "Inventory.h"
+#include "Inventory.hpp"
 
 void Inventory::addItem(Item newItem) {
     if (items.find(newItem.getName()) != items.end()) {

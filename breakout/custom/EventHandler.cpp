@@ -1,4 +1,4 @@
-#include "EventHandler.h"
+#include "EventHandler.hpp"
 
 void EventHandler::addEvent(Event* event) {
     eventQueue.push(event);

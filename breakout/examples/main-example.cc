@@ -1,11 +1,11 @@
 #include <SFML/Graphics.hpp>
-#include "../global.h"
-#include "../Engine.h"
-#include "../map/Map.h"
-#include "../entities/Player.h"
-#include "../Logger.h"
-#include "../map/Item.h"
-#include "../custom/Event.h"
+#include "../global.hpp"
+#include "../Engine.hpp"
+#include "../map/Map.hpp"
+#include "../entities/Player.hpp"
+#include "../Logger.hpp"
+#include "../map/Item.hpp"
+#include "../custom/Event.hpp"
 
 #include <iostream>
 
@@ -25,7 +25,7 @@ void eventLoop() {
                     logger.plaintext("door was open");
                 } else {
                     tileAt.type->door.open = true;
-                    tileAt.setSolid(false); 
+                    tileAt.setSolid(false);
                 }
             }
         } else if (event->type == Event::PlayerMove) {
@@ -86,7 +86,7 @@ int main() {
     }
 
     while (engine.isRunning()) { //game loop
-        eventLoop();        
+        eventLoop();
         inputLoop(&player, &window, map);
         player.update();
         engine.update(player);

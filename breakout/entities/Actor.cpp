@@ -1,4 +1,4 @@
-#include "Actor.h"
+#include "Actor.hpp"
 
 Actor::Actor(int x, int y, wchar_t ch, Color color) {
     pos.x = x;
