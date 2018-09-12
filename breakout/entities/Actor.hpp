@@ -6,7 +6,7 @@ using namespace bt;
 
 /* Struct: Actor::position
 	Position struct with x and y fields.
-		
+
 	Fields:
 		x - Actor x position.
 		y - Actor y position.
@@ -55,7 +55,7 @@ public:
 	      The current Actor position.
 
 	   See Also:
-	      <position> 
+	      <position>
 	*/
 	position getPosition() { return pos; }
 
@@ -63,7 +63,7 @@ public:
 	   Get the Actor text char.
 
 	   Returns:
-	      The Actor char. 
+	      The Actor char.
 	*/
     wchar_t getChar() { return m_ch; }
 
@@ -87,7 +87,7 @@ public:
 	   Move Actor by an offset.
 
 	   Parameters:
-	      x - offset to add to the current x position.   
+	      x - offset to add to the current x position.
           y - offset to add to the current y position.
 	*/
     void move(int x, int y);
@@ -134,14 +134,14 @@ public:
 
 private:
 	//Group: Private Variables
-	
+
 	// Variable: m_ch
     wchar_t m_ch;
 
 	// Variable: m_color
     Color m_color;
 
-	// Variable: m_radius	
+	// Variable: m_radius
 	int m_radius = 3;
 
 protected:

@@ -19,10 +19,10 @@ public:
 
        Parameters:
           newItem - the new item to add.
-       
+
        See Also:
           <Item>
-    
+
     */
     void addItem(Item newItem);
 
@@ -31,10 +31,10 @@ public:
 
        Parameters:
           item - the name of the item.
-        
+
        Returns:
           An std::vector with all <Item>s found with the given name.
-       
+
        See Also:
           <Item>
     */
@@ -44,10 +44,10 @@ public:
        get the all of the items in the Inventory.
 
        Returns:
-          The <items> of the Inventory.    
+          The <items> of the Inventory.
     */
     std::map<std::string, std::vector<Item> > getItems() { return items; }
-    
+
 private:
     // Group: Private Variables
 

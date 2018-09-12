@@ -39,7 +39,7 @@ public:
        Get the <Item>'s name.
 
        Returns:
-          The <Item>'s <m_name>. 
+          The <Item>'s <m_name>.
     */
     std::string getName() { return m_name; }
 
@@ -47,7 +47,7 @@ public:
        Get the <Item>'s active state.
 
        Returns:
-          The <Item>'s <m_active>. 
+          The <Item>'s <m_active>.
     */
     bool active() { return m_active; }
 
@@ -55,13 +55,13 @@ public:
        Get the <Item>'s equipable state.
 
        Returns:
-          The <Item>'s <m_equipable>. 
+          The <Item>'s <m_equipable>.
     */
     bool equipable() { return m_equipable; }
 private:
     // Group: Private Variables
 
-    // Variable: m_name 
+    // Variable: m_name
     std::string m_name;
 
     // Variable: m_active

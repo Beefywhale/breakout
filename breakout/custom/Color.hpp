@@ -20,7 +20,7 @@ namespace bt {
                   b - int ranging from 0 to 255.
             */
             Color(int r, int g, int b);
-           
+
             // Variable: red
             // the amount of red color as an int ranging from 0-255.
             int red;

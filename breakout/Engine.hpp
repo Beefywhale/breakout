@@ -24,7 +24,7 @@ public:
 		  map - The current <Map>.
 	*/
 	Engine(sf::RenderWindow* window, Map map);
-    
+
 
 	/* Function: update
        The main game loop, called every frame.
@@ -42,7 +42,7 @@ public:
 	      The Engine <Map>.
 	*/
 	Map getMap() { return m_map; }
-    
+
 	/* Function: changeFontSize
 	   change the size of the Engine font.
 
@@ -50,10 +50,10 @@ public:
 	      newSize - the new size to make the font.
 	*/
 	void changeFontSize(int newSize);
-    
+
     /* Function: isRunning
 	   Check if Engine is running.
-       
+
 	   Returns:
 	      A boolean which is true if Engine is running.
     */
@@ -66,7 +66,7 @@ private:
     sf::RenderWindow* m_window;
 
 	// Variable: font
-	// The font Engine uses to display text. 
+	// The font Engine uses to display text.
     sf::Font font;
 
 	// Variable: tileRender
@@ -74,9 +74,6 @@ private:
 
 	// Variable: playerRender
     sf::Text playerRender;
-
-	// Variable: zombieRender
-	sf::Text zombieRender;
 
 	// Variable: m_map
 	// The <Map> Engine gets the <Tile>s from.

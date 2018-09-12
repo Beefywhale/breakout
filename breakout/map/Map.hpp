@@ -21,10 +21,10 @@ public:
     // Contructor: Map
     // Default contructor.
     Map() {};
-	
+
     /* Function: getTiles()
        Get all of the Map <Tile>s in an std::map.
-       
+
        Returns:
           An std::map with x,y pair keys and <Tile> values.
     */
@@ -42,10 +42,10 @@ public:
        Parameters:
           x - The x coordinate of the <Tile>.
           y - The y coordinate of the <Tile>.
-       
+
        Returns:
           The <Tile> at the x and y coordinates given.
-        
+
        See Also:
           <Tile>
     */
@@ -62,8 +62,8 @@ private:
 
     // Variable: it
     std::map<std::pair<int, int>, Tile>::iterator it;
-    
-    // Variable: logger    
+
+    // Variable: logger
     Logger logger;
 
     // Variable: m_path

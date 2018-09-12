@@ -33,7 +33,7 @@ public:
            y - starting y position.
            ch - Tile text char.
            color - <Color> of the text.
-		
+
 		See Also:
 		   <Actor>
 	*/
@@ -68,7 +68,7 @@ public:
 
 private:
     // Group: Private Variables
-    
+
 	// Variable: m_solid
 	bool m_solid;
 };

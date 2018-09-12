@@ -27,7 +27,7 @@ void Map::load(const std::string path) {
 		newTile.type->type = string2Type[i["type"]];
 		tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
 	}
-	
+
 	if (data.find("Player") == data.end()) {
 		//do stuff
 	} else {

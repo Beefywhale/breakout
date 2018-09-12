@@ -15,7 +15,7 @@ public:
         Door,
         Floor,
         Wall,
-        
+
         Count
     };
 
