@@ -5,7 +5,7 @@ namespace bt {
         public:
             Color() {}
             Color(int r, int g, int b);
-            
+
             int red;
             int green;
             int blue;
