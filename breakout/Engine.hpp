@@ -24,7 +24,6 @@ private:
     sf::Text playerRender;
 
 	Map m_map;
-
 	Logger logger;
     int fontSize;
 };
