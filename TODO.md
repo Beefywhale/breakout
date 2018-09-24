@@ -6,3 +6,4 @@
 - [ ] Menu framework.
 - [ ] Improve `Inventory`.
 - [ ] Add more events and event triggers.
+- [ ] map editor.
