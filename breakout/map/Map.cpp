@@ -22,9 +22,24 @@ void Map::load(const std::string path) {
 	mapData.spawnpoint.y = spawnY;
 
 	for (auto i : data["Tiles"]) {
+		if (i.find("x") == i.end()|| i.find("y") == i.end()) {
+			logger.warning("Skipping over tile, missing coordinate entries.");
+			continue;
+		}
+
 		Tile newTile(i["x"], i["y"], (wchar_t)i["char"], bt::Color(i["color"][0], i["color"][1], i["color"][2]));
-		newTile.setSolid(i["solid"]);
-		newTile.type->type = string2Type[i["type"]];
+
+		if (i.find("solid") == i.end()) {
+			logger.warning("Tile at " + std::to_string(i["x"].get<int>()) + ", " + std::to_string(i["y"].get<int>()) + " missing 'solid' entry, using defaults.");
+			newTile.setSolid(false);
+		} else {
+			newTile.setSolid(i["solid"]);
+		}
+		if (i.find("type") == i.end()) {
+			logger.warning("Tile at " + std::to_string(i["x"].get<int>()) + ", " + std::to_string(i["y"].get<int>()) + " missing 'type' entry, using defaults.");
+		} else {
+			newTile.type->type = string2Type[i["type"]];
+		}
 		tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
 	}
 

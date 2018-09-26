@@ -19,8 +19,7 @@ public:
         Count
     };
 
-    Types type;
-
+    Types type = Floor;
 
     union {
         DoorType door;

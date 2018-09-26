@@ -2,6 +2,8 @@
 
 #include "../map/Tile.hpp"
 #include <memory>
+
+//foward delcaring Player class.
 class Player;
 
 class Event {

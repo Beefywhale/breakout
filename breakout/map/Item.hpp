@@ -9,7 +9,6 @@ public:
     void setEquipable(bool equipable);
     void setName(std::string name);
 
-
     std::string getName() { return m_name; }
 
     bool active() { return m_active; }
