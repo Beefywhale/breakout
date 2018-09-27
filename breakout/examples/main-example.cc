@@ -22,7 +22,6 @@ void eventLoop() {
                 if (tileAt.type->door.open) {
                     tileAt.type->door.open = false;
                     tileAt.setSolid(true);
-                    logger.plaintext("door was open");
                 } else {
                     tileAt.type->door.open = true;
                     tileAt.setSolid(false);

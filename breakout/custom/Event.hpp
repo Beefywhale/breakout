@@ -9,7 +9,7 @@ class Player;
 class Event {
 public:
     struct CollisionEvent {
-        std::shared_ptr<Tile> tile;
+        std:: shared_ptr<Tile> tile;
     };
 
     struct PlayerMoveEvent {
