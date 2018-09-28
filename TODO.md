@@ -7,4 +7,5 @@
 - [ ] Improve `Inventory`.
 - [ ] Add more events and event triggers.
 - [ ] completely revamp type system.
+- [ ] redo how the main engine works with Actor(s).
 - [ ] map editor.
