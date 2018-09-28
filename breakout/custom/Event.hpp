@@ -1,9 +1,9 @@
 #pragma once
 
 #include <string>
+#include "../entities/Actor.hpp"
 
-//foward declaration of PLayer and Map classes
-class Player;
+//foward declaration of Map class
 class Map;
 
 class Event {
@@ -13,7 +13,7 @@ public:
     void setDesc(std::string newDescription);
     std::string getDesc() { return description; }
 
-    virtual void emit(Player player, Map map);
+    virtual void emit(Actor actor, Map map);
 private:
     std::string description;
 };

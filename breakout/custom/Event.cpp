@@ -6,4 +6,4 @@ void Event::setDesc(std::string newDescription) {
     description = newDescription;
 }
 
-void Event::emit(Player player, Map map) {}
+void Event::emit(Actor actor, Map map) {}

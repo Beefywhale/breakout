@@ -8,7 +8,7 @@ class PlayerMoveEvent: public Event {
 public:
     PlayerMoveEvent(): Event() {};
 
-    void emit(Player player, Map map) {
-        logger.info("Player moved from: (" + std::to_string(player.prevPos.x) + "," + std::to_string(player.prevPos.y) + ") to: (" + std::to_string(player.getPosition().x) + "," + std::to_string(player.getPosition().y) + ")");
+    void emit(Actor actor, Map map) {
+        logger.info("Actor moved from: (" + std::to_string(actor.prevPos.x) + "," + std::to_string(actor.prevPos.y) + ") to: (" + std::to_string(actor.getPosition().x) + "," + std::to_string(actor.getPosition().y) + ")");
     }
 };

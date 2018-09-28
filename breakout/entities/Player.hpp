@@ -27,9 +27,6 @@ public:
     int movementSpeed = 1;
 
     bool canWalk = true;
-
-    Tile lastCollidedTile;
-
 private:
     sf::Clock walkClock;
 

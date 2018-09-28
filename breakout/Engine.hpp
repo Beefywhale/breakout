@@ -2,7 +2,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "map/Tile.hpp"
-#include "entities/Player.hpp"
+#include "entities/Actor.hpp"
 #include "map/Map.hpp"
 #include "Logger.hpp"
 
@@ -11,8 +11,9 @@ public:
     Engine() {}
 	Engine(sf::RenderWindow* window, Map map);
 
-	void update(Player player);
+	void draw();
 	void changeFontSize(int newSize);
+	void addActor(Actor* actor);
 
 	Map getMap() { return m_map; }
 
@@ -21,7 +22,11 @@ private:
     sf::RenderWindow* m_window;
     sf::Font font;
     sf::Text tileRender;
-    sf::Text playerRender;
+    sf::Text actorRender;
+
+	std::vector<Actor*> actors;
+	std::vector<std::pair<int, int>> actorPos;
+    std::vector<std::pair<int, int>>::iterator it;
 
 	Map m_map;
 	Logger logger;

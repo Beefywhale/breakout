@@ -9,8 +9,8 @@ class CollisionEvent: public Event {
 public:
     CollisionEvent(): Event() {};
 
-    void emit(Player player, Map map) {
-        Tile tile = player.lastCollidedTile;
+    void emit(Actor actor, Map map) {
+        Tile tile = map.getTileAt(actor.prevPos.x, actor.prevPos.y);
         if (tile.type->type == Type::Door) {
             logger.info("Colliding with door.");
             if (tile.type->door.open) {

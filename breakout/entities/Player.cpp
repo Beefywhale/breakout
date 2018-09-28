@@ -3,7 +3,7 @@
 #include "Player.hpp"
 
 void Player::update() {
-    if (static_cast<int>(walkClock.getElapsedTime().asMilliseconds() >= 100)) {
+    if (static_cast<int>(walkClock.getElapsedTime().asMilliseconds() >= 80)) {
         canWalk = true;
     }
 }
@@ -13,7 +13,8 @@ void Player::safeMove(int x, int y, Map map) {
         Tile tileAt = map.getTileAt(pos.x + x, pos.y + y);
         if (tileAt.solid()) {
             //add a collision event to the event queue
-            lastCollidedTile = tileAt;
+            prevPos.x = tileAt.getPosition().x;
+            prevPos.y = tileAt.getPosition().y;
             Event* newEvent = new CollisionEvent();
             eventHandler.addEvent(newEvent);
         }

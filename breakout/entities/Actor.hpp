@@ -12,8 +12,8 @@ struct position {
 class Actor {
 public:
     Actor() {}
-
     Actor(int x, int y, wchar_t ch, Color color);
+	virtual ~Actor() {};
 
 	position getPosition() { return pos; }
 
@@ -31,7 +31,6 @@ public:
 	void setSightRadius(int radius);
 
 	position prevPos;
-
 private:
     wchar_t m_ch;
 
