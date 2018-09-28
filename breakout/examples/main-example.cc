@@ -9,33 +9,10 @@
 
 #include <iostream>
 
-void eventLoop() {
+void eventLoop(Player player, Map map) {
     while (!eventHandler.isEmpty()) {
         Event* event = eventHandler.pollEvents();
-        if (event->type == Event::Collision) {
-            Tile tileAt = *event->collision->tile;
-            int tileX = tileAt.getPosition().x;
-            int tileY = tileAt.getPosition().y;
-            logger.info(std::string("Colliding with tile at: ") + std::to_string(tileX) + std::string(", ") + std::to_string(tileY) + "\n");
-            if (tileAt.type->type == Type::Door) {
-                logger.info("Colliding with a door");
-                if (tileAt.type->door.open) {
-                    tileAt.type->door.open = false;
-                    tileAt.setSolid(true);
-                } else {
-                    tileAt.type->door.open = true;
-                    tileAt.setSolid(false);
-                }
-            }
-        } else if (event->type == Event::PlayerMove) {
-            Tile tileAt = *event->playerMove->movedTile;
-            int tileX = tileAt.getPosition().x;
-            int tileY = tileAt.getPosition().y;
-            Player* playerAt = *event->playerMove->player;
-            int playerX = playerAt->getPosition().x;
-            int playerY = playerAt->getPosition().y;
-            logger.info("Player moved from: " + std::to_string(playerX) + std::string(",") + std::to_string(playerY) + " to: " + std::to_string(tileX) + std::string(",") + std::to_string(tileY) + "\n");
-        }
+        event->emit(player, map);
     }
 }
 
@@ -79,13 +56,17 @@ int main() {
 
     Engine engine(&window, map);
 
+
+    Item newItem;
+    player.getInventory()->addItem(newItem);
+
     // example for printing player inventory with number of items with the name, EX: (2) Apple
     for (auto i : player.getInventory()->getItems()) {
         logger.info("(" + std::to_string(i.second.size()) + ") " + i.first);
     }
 
     while (engine.isRunning()) { //game loop
-        eventLoop();
+        eventLoop(player, map);
         inputLoop(&player, &window, map);
         player.update();
         engine.update(player);

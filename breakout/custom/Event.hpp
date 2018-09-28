@@ -1,33 +1,19 @@
 #pragma once
 
-#include "../map/Tile.hpp"
-#include <memory>
+#include <string>
 
-//foward delcaring Player class.
+//foward declaration of PLayer and Map classes
 class Player;
+class Map;
 
 class Event {
 public:
-    struct CollisionEvent {
-        std:: shared_ptr<Tile> tile;
-    };
-
-    struct PlayerMoveEvent {
-        std::shared_ptr<Player*> player;
-        std::shared_ptr<Tile> movedTile;
-    };
-
     Event() {};
 
-    enum EventType {
-        Collision,
-        PlayerMove,
+    void setDesc(std::string newDescription);
+    std::string getDesc() { return description; }
 
-        Count
-    };
-
-    CollisionEvent* collision = new CollisionEvent();
-    PlayerMoveEvent* playerMove = new PlayerMoveEvent();
-
-    EventType type;
+    virtual void emit(Player player, Map map);
+private:
+    std::string description;
 };

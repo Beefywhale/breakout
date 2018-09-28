@@ -30,6 +30,8 @@ public:
     void setPosition(int x, int y);
 	void setSightRadius(int radius);
 
+	position prevPos;
+
 private:
     wchar_t m_ch;
 

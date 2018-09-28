@@ -1,3 +1,5 @@
+#include "../events/PlayerMoveEvent.hpp"
+#include "../events/CollisionEvent.hpp"
 #include "Player.hpp"
 
 void Player::update() {
@@ -11,19 +13,16 @@ void Player::safeMove(int x, int y, Map map) {
         Tile tileAt = map.getTileAt(pos.x + x, pos.y + y);
         if (tileAt.solid()) {
             //add a collision event to the event queue
-            Event* newEvent = new Event();
-            newEvent->type = Event::Collision;
-            std::shared_ptr<Tile> newTile = std::make_shared<Tile>(tileAt);
-            newEvent->collision->tile = newTile;
+            lastCollidedTile = tileAt;
+            Event* newEvent = new CollisionEvent();
             eventHandler.addEvent(newEvent);
         }
         else {
-            Event* newEvent = new Event();
-            newEvent->type = Event::PlayerMove;
-            std::shared_ptr<Tile> newTile = std::make_shared<Tile>(map.getTileAt(pos.x, pos.y));
-            newEvent->playerMove->movedTile = newTile;
-            newEvent->playerMove->player = std::make_shared<Player*>(this);
+            //add playermove event to queue
+            Event* newEvent = new PlayerMoveEvent();
             eventHandler.addEvent(newEvent);
+            prevPos.x = pos.x;
+            prevPos.y = pos.y;
             move(x, y);
         }
         canWalk = false;

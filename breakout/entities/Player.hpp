@@ -6,8 +6,11 @@
 #include "../custom/Color.hpp"
 #include "../global.hpp"
 #include "Inventory.hpp"
-
 using namespace bt;
+
+//foward declarations of player related events to prevent conflicts.
+class PlayerMoveEvent;
+class CollisionEvent;
 
 class Player: public Actor {
 public:
@@ -24,6 +27,9 @@ public:
     int movementSpeed = 1;
 
     bool canWalk = true;
+
+    Tile lastCollidedTile;
+
 private:
     sf::Clock walkClock;
 
