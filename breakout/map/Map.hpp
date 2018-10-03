@@ -9,7 +9,6 @@
 #include <SFML/Graphics.hpp>
 #include "../global.hpp"
 #include "Tile.hpp"
-#include "../Logger.hpp"
 using json = nlohmann::json;
 
 class Map {
@@ -32,18 +31,6 @@ private:
     std::string m_path;
 
     json data;
-
-    std::map<std::string, Type::Types> string2Type {
-        std::make_pair("floor", Type::Floor),
-		std::make_pair("door", Type::Door),
-		std::make_pair("wall", Type::Wall)
-	};
-
-    std::map<Type::Types, std::string> type2String {
-        std::make_pair(Type::Floor, "floor"),
-		std::make_pair(Type::Door, "door"),
-		std::make_pair(Type::Wall, "wall")
-	};
 
     struct {
         struct {

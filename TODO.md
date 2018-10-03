@@ -10,3 +10,4 @@
 - [ ] map editor.
 - [ ] make custom `Window` class.
 - [ ] remove dependencies on `Player` etc. Make it more framework-like.
+- [ ] id system.

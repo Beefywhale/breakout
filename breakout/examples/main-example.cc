@@ -3,7 +3,6 @@
 #include "../Engine.hpp"
 #include "../map/Map.hpp"
 #include "../entities/Player.hpp"
-#include "../Logger.hpp"
 #include "../map/Item.hpp"
 #include "../custom/Event.hpp"
 

@@ -38,7 +38,7 @@ void Map::load(const std::string path) {
 		if (i.find("type") == i.end()) {
 			logger.warning("Tile at " + std::to_string(i["x"].get<int>()) + ", " + std::to_string(i["y"].get<int>()) + " missing 'type' entry, using defaults.");
 		} else {
-			newTile.type->type = string2Type[i["type"]];
+			newTile.type = i["type"];
 		}
 		tileMap.insert(std::make_pair(std::make_pair(newTile.getPosition().x, newTile.getPosition().y), newTile));
 	}
@@ -60,7 +60,7 @@ void Map::save(const std::string path) {
 		tileObject["x"] = tile.getPosition().x;
 		tileObject["y"] = tile.getPosition().y;
 		tileObject["solid"] = tile.solid();
-		tileObject["type"] = type2String[tile.type->type];
+		tileObject["type"] = tile.type;
 		tileObject["char"] = (int) tile.getChar();
 		tileObject["color"] = {tile.getColor().red, tile.getColor().green, tile.getColor().blue};
 

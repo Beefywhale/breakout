@@ -19,3 +19,7 @@ std::vector<Item> Inventory::getItemsNamed(std::string itemName) {
         return temp;
     }
 }
+
+//define when I have an id system.
+void Inventory::removeItems(std::string itemName, int amount) {}
+void Inventory::removeItems(Item item, int amount) {}

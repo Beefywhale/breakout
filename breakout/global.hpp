@@ -1,6 +1,6 @@
 #pragma once
 #include "custom/EventHandler.hpp"
-#include "Logger.hpp"
+#include "custom/Logger.hpp"
 
 extern EventHandler eventHandler;
 extern Logger logger;
