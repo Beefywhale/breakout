@@ -4,9 +4,6 @@
 #include "../map/Map.hpp"
 #include "../entities/Player.hpp"
 #include "../map/Item.hpp"
-#include "../custom/Event.hpp"
-
-#include <iostream>
 
 void eventLoop() {
     while (!eventHandler.isEmpty()) {
