@@ -7,5 +7,5 @@
 - [ ] completely revamp type system.
 - [ ] map editor.
 - [ ] make custom `Window` class.
-- [ ] remove dependencies on `Player` etc. Make it more framework-like.
+- [x] remove dependencies on `Player` etc. Make it more framework-like.
 - [ ] id system.

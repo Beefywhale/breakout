@@ -2,7 +2,7 @@
 #include "../global.hpp"
 #include "../Engine.hpp"
 #include "../map/Map.hpp"
-#include "../entities/Player.hpp"
+#include "Player.hpp"
 #include "../map/Item.hpp"
 
 void eventLoop() {

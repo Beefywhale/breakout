@@ -2,11 +2,11 @@
 #include <memory>
 #include <functional>
 #include <SFML/Graphics.hpp>
-#include "Actor.hpp"
+#include "../entities/Actor.hpp"
 #include "../map/Map.hpp"
 #include "../custom/Color.hpp"
 #include "../global.hpp"
-#include "Inventory.hpp"
+#include "../entities/Inventory.hpp"
 using namespace bt;
 
 class Player: public Actor {
