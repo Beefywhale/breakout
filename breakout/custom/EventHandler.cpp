@@ -1,11 +1,11 @@
 #include "EventHandler.hpp"
 
-void EventHandler::addEvent(Event* event) {
+void EventHandler::addEvent(std::function<void()> event) {
     eventQueue.push(event);
 }
 
-Event* EventHandler::pollEvents() {
-    Event* event = eventQueue.front();
+std::function<void()> EventHandler::pollEvents() {
+    std::function<void()> event = eventQueue.front();
     eventQueue.pop();
     return event;
 }

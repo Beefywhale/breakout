@@ -1,16 +1,16 @@
 #pragma once
 #include <queue>
-#include "Event.hpp"
+#include <functional>
 
 class EventHandler {
 public:
     EventHandler() {}
 
-    void addEvent(Event* event);
-    Event* pollEvents();
+    void addEvent(std::function<void()> event);
+    std::function<void()> pollEvents();
     bool isEmpty() { return eventQueue.empty(); }
-    std::queue<Event*> getQueue() { return eventQueue; }
+    std::queue<std::function<void()>> getQueue() { return eventQueue; }
 
 private:
-    std::queue<Event*> eventQueue;
+    std::queue<std::function<void()>> eventQueue;
 };

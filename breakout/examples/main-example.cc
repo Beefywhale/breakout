@@ -8,10 +8,9 @@
 
 #include <iostream>
 
-void eventLoop(Player player, Map map) {
+void eventLoop() {
     while (!eventHandler.isEmpty()) {
-        Event* event = eventHandler.pollEvents();
-        event->emit(player, map);
+        eventHandler.pollEvents()();
     }
 }
 
@@ -26,16 +25,16 @@ void inputLoop(Player* player, sf::RenderWindow* window, Map map) {
         }
         //player walk loop
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            player->safeMove(-player->movementSpeed, 0, map);
+            player->safeMove(-player->movementSpeed, 0);
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            player->safeMove(player->movementSpeed, 0, map);
+            player->safeMove(player->movementSpeed, 0);
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-            player->safeMove(0, player->movementSpeed, map);
+            player->safeMove(0, player->movementSpeed);
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-            player->safeMove(0, -player->movementSpeed, map);
+            player->safeMove(0, -player->movementSpeed);
         }
     }
 }
@@ -46,6 +45,7 @@ int main() {
     Player player(0, 0, L'@', bt::Color(255, 255, 0));
     Map map;
     map.load("maps/test.json");
+    player.setMap(map);
 
     Engine engine(&window, map);
     engine.addActor(&player);
@@ -56,7 +56,7 @@ int main() {
     }
 
     while (engine.isRunning()) { //game loop
-        eventLoop(player, map);
+        eventLoop();
         inputLoop(&player, &window, map);
         player.update();
         engine.draw();
