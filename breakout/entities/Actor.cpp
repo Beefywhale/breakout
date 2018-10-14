@@ -5,6 +5,8 @@ Actor::Actor(int x, int y, wchar_t ch, Color color) {
     pos.y = y;
     m_ch = ch;
     m_color = color;
+    prevPos.x = x;
+    prevPos.y = y;
 }
 
 void Actor::move(int x, int y) {
@@ -17,6 +19,8 @@ int Actor::distance(int startX, int startY, int targetX, int targetY) {
 }
 
 void Actor::setPosition(int x, int y) {
+    prevPos.x = x;
+    prevPos.y = y;
     pos.x = x;
     pos.y = y;
     m_color = Color(255,255,255);

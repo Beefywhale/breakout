@@ -15,7 +15,7 @@ void Logger::warning(std::string warn) {
 	char buf[255];
 	strftime(buf, sizeof(buf), "[%H:%M %p] - WARNING - ", now);
 	std::string time(buf);
-    fprintf(stderr, "%s", (time + warn+"\n").c_str());
+    fprintf(stderr, "%s", (time + warn + "\n").c_str());
 }
 
 void Logger::info(std::string inf) {

@@ -1,8 +1,11 @@
 # TO DO
 
 - [ ] `Item`'s and `Item` types and events.
-- [x] Map loading.
 - [ ] Improve map loading, saving and states.
 - [ ] Menu framework.
 - [ ] Improve `Inventory`.
-- [ ] Add more events and event triggers.
+- [ ] completely revamp type system.
+- [ ] map editor.
+- [ ] make custom `Window` class.
+- [x] remove dependencies on `Player` etc. Make it more framework-like.
+- [ ] id system.
