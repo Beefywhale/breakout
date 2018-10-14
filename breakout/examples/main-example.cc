@@ -5,14 +5,15 @@
 #include "Player.hpp"
 #include "../map/Item.hpp"
 
-void eventLoop() {
+void events() {
+    //loop over all queued events until queue is empty, may need to be async in future
     while (!eventHandler.isEmpty()) {
         eventHandler.pollEvents()();
     }
 }
 
-// function to check for keyboard input and to move the player accordingly.
-void inputLoop(Player* player, sf::RenderWindow* window, Map map) {
+// check for keyboard input and move the player accordingly, handle sfml window events
+void input(Player* player, sf::RenderWindow* window, Map map) {
     if (window->hasFocus()) {
         sf::Event event;
         while (window->pollEvent(event)) {
@@ -20,42 +21,35 @@ void inputLoop(Player* player, sf::RenderWindow* window, Map map) {
                 window->close();
             }
         }
-        //player walk loop
+
+        // player walk key checks
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
             player->safeMove(-player->movementSpeed, 0);
-        }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
             player->safeMove(player->movementSpeed, 0);
-        }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
             player->safeMove(0, player->movementSpeed);
-        }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
             player->safeMove(0, -player->movementSpeed);
         }
     }
 }
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "breakout");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "breakout"); // create an SFML RenderWindow
 
-    Player player(0, 0, L'@', bt::Color(255, 255, 0));
-    Map map;
-    map.load("maps/test.json");
-    player.setMap(map);
+    Map map; // create the main Map object
+    map.load("maps/test.json"); // load tiles from a json file
 
-    Engine engine(&window, map);
-    engine.addActor(&player);
+    Player player(0, 0, L'@', bt::Color(255, 255, 0)); // create main Player object
+    player.setMap(map); // set player map to the previously created Map
 
-    // example for printing player inventory with number of items with the name, EX: (2) Apple
-    for (auto i : player.getInventory()->getItems()) {
-        logger.info("(" + std::to_string(i.second.size()) + ") " + i.first);
-    }
+    Engine engine(&window, map); // create main Engine object with SFML window and map
+    engine.addActor(&player); // add main player to the engine for drawing
 
-    while (engine.isRunning()) { //game loop
-        eventLoop();
-        inputLoop(&player, &window, map);
-        player.update();
+    while (engine.isRunning()) { // main game loop
+        events();
+        input(&player, &window, map);
         engine.draw();
     }
     return 0;

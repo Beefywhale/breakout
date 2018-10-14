@@ -25,6 +25,7 @@ void Engine::draw() {
     m_window->clear();
 	//loop over all actors and draw them
 	for (auto actor : actors) {
+		actor->update();
 		actorRender.setFillColor(sf::Color(actor->getColor().red, actor->getColor().green, actor->getColor().blue));
 		actorRender.setString(actor->getChar());
 		actorRender.setPosition(actor->getPosition().x * (fontSize - 2),
