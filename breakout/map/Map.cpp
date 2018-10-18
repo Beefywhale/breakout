@@ -1,5 +1,9 @@
 #include "Map.hpp"
 
+Map::Map(std::string path) {
+	load(path);
+}
+
 Tile Map::getTileAt(int x, int y) {
     it = tileMap.find(std::make_pair(x, y));
     if (it != tileMap.end()) {

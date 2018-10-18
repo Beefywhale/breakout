@@ -1,7 +1,7 @@
 #include "Engine.hpp"
 
-Engine::Engine(sf::RenderWindow* window, Map map) {
-    m_window = window;
+Engine::Engine(sf::RenderWindow& window, Map map) {
+    m_window = &window;
     m_map = map;
 	fontSize = 16;
 	sf::err().rdbuf(0);
@@ -11,7 +11,7 @@ Engine::Engine(sf::RenderWindow* window, Map map) {
 		logger.error("Failed to load font!");
     }
 
-    window->setFramerateLimit(60);
+    window.setFramerateLimit(60);
 
     tileRender.setFont(font);
     tileRender.setCharacterSize(fontSize);
@@ -62,6 +62,6 @@ void Engine::changeFontSize(int newSize) {
 	actorRender.setCharacterSize(fontSize);
 }
 
-void Engine::addActor(Actor* actor) {
-	actors.push_back(actor);
+void Engine::addActor(Actor& actor) {
+	actors.push_back(&actor);
 }
