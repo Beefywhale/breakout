@@ -13,7 +13,8 @@ using json = nlohmann::json;
 
 class Map {
 public:
-    Map() {};
+    Map() {}
+    Map(std::string path);
 
     std::map<std::pair<int, int>, Tile> getTiles() { return tileMap; }
 

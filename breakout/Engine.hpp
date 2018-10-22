@@ -9,11 +9,11 @@
 class Engine {
 public:
     Engine() {}
-	Engine(sf::RenderWindow* window, Map map);
+	Engine(sf::RenderWindow& window, Map map);
 
 	void draw();
 	void changeFontSize(int newSize);
-	void addActor(Actor* actor);
+	void addActor(Actor& actor);
 
 	Map getMap() { return m_map; }
 
@@ -26,7 +26,7 @@ private:
 
 	std::vector<Actor*> actors;
 	std::vector<std::pair<int, int>> actorPos;
-    std::vector<std::pair<int, int>>::iterator it;
+	std::vector<std::pair<int, int>>::iterator it;
 
 	Map m_map;
 	Logger logger;

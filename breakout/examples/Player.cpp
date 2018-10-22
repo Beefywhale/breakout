@@ -1,5 +1,10 @@
 #include "Player.hpp"
 
+Player::Player(int x, int y, wchar_t ch, Color color, Map mapset) : Actor(x, y, ch, color) {
+    setMap(mapset);
+}
+
+
 void Player::moveEvent() {
    logger.info("Actor moved from: (" + std::to_string(prevPos.x) + "," + std::to_string(prevPos.y) + ") to: (" + std::to_string(pos.x) + "," + std::to_string(pos.y) + ")");
 }

@@ -13,6 +13,7 @@ class Player: public Actor {
 public:
     Player() {}
     Player(int x, int y, wchar_t ch, Color color) : Actor(x, y, ch, color) {}
+    Player(int x, int y, wchar_t ch, Color color, Map mapset);
 
 	void update() override;
     void setWalk(bool walk);
