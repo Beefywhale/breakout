@@ -14,14 +14,14 @@ void events() {
 
 // check for keyboard input and move the player accordingly, handle sfml window events
 void input(Player& player, sf::RenderWindow& window, Map map) {
-    if (window.hasFocus()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                window.close();
-            }
+    sf::Event event;
+    while (window.pollEvent(event)) {
+        if (event.type == sf::Event::Closed) {
+            window.close();
         }
+    }
 
+    if (window.hasFocus()) {
         // player walk key checks
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
             player.safeMove(-player.movementSpeed, 0);
@@ -31,6 +31,20 @@ void input(Player& player, sf::RenderWindow& window, Map map) {
             player.safeMove(0, player.movementSpeed);
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
             player.safeMove(0, -player.movementSpeed);
+        }
+        if (event.type == sf::Event::KeyReleased) {
+            if (event.key.code == sf::Keyboard::A) {
+                player.setWalk(true);
+            }
+            if (event.key.code == sf::Keyboard::D) {
+                player.setWalk(true);
+            }
+            if (event.key.code == sf::Keyboard::S) {
+                player.setWalk(true);
+            }
+            if (event.key.code == sf::Keyboard::W) {
+                player.setWalk(true);
+            }
         }
     }
 }

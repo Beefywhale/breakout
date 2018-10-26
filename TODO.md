@@ -7,6 +7,6 @@
 - [ ] completely revamp type system.
 - [ ] map editor.
 - [ ] make custom `Window` class.
-- [ ] Fix example `Player` movement. (Too stiff and unresponsive)
+- [x] Fix example `Player` movement. (Too stiff and unresponsive)
 - [ ] id system.
 - [ ] slowly turn this 'framework' into more of an Engine.

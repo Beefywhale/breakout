@@ -18,7 +18,7 @@ void Player::collisionEvent() {
 */}
 
 void Player::update() {
-    if (static_cast<int>(walkClock.getElapsedTime().asMilliseconds() >= 80)) {
+    if (static_cast<int>(walkClock.getElapsedTime().asMilliseconds() >= 80)) { //wait 80 milliseconds before alloweing player to walk again if holding down a key
         canWalk = true;
     }
 }
