@@ -7,5 +7,6 @@
 - [ ] completely revamp type system.
 - [ ] map editor.
 - [ ] make custom `Window` class.
-- [x] remove dependencies on `Player` etc. Make it more framework-like.
+- [ ] Fix example `Player` movement. (Too stiff and unresponsive)
 - [ ] id system.
+- [ ] slowly turn this 'framework' into more of an Engine.

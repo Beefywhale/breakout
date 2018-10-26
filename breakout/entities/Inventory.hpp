@@ -4,8 +4,6 @@
 #include <string>
 #include "../map/Item.hpp"
 
-// Class: Inventory
-// A class for handling <Item>s
 class Inventory {
 public:
     Inventory() {}

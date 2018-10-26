@@ -11,6 +11,9 @@ public:
     Engine() {}
 	Engine(sf::RenderWindow& window, Map map);
 
+	void drawMenus();
+	void drawActors();
+	void drawTiles();
 	void draw();
 	void changeFontSize(int newSize);
 	void addActor(Actor& actor);
@@ -21,8 +24,7 @@ public:
 private:
     sf::RenderWindow* m_window;
     sf::Font font;
-    sf::Text tileRender;
-    sf::Text actorRender;
+	sf::Text textRenderer;
 
 	std::vector<Actor*> actors;
 	std::vector<std::pair<int, int>> actorPos;

@@ -39,7 +39,6 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "breakout"); // create an SFML RenderWindow
 
     Map map("maps/test.json"); // create the main Map object and load tiles from a json file
-
     Player player(0, 0, L'@', bt::Color(255, 255, 0), map); // create main Player object
 
     Engine engine(window, map); // create main Engine object with SFML window and map

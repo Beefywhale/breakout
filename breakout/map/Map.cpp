@@ -73,5 +73,4 @@ void Map::save(const std::string path) {
 	}
 	std::ofstream o(path);
 	o << std::setw(4) << tileData << std::endl;
-
 }

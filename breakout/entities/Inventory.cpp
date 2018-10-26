@@ -20,6 +20,6 @@ std::vector<Item> Inventory::getItemsNamed(std::string itemName) {
     }
 }
 
-//define when I have an id system.
+//define when I have an id system and finish Items.
 void Inventory::removeItems(std::string itemName, int amount) {}
 void Inventory::removeItems(Item item, int amount) {}
