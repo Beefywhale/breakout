@@ -9,13 +9,13 @@ void Player::moveEvent() {
 }
 
 void Player::collisionEvent() {
-/*    Tile tile = map.getTileAt(prevPos.x, prevPos.y);
+    Tile tile = map.getTileAt(prevPos.x, prevPos.y);
     if (tile.type == "door") {
         logger.info("Colliding with door.");
     } else {
         logger.info("Player collided with tile at: (" + std::to_string(tile.getPosition().x) + "," + std::to_string(tile.getPosition().y) + ")");
     }
-*/}
+}
 
 void Player::update() {
     if (static_cast<int>(walkClock.getElapsedTime().asMilliseconds() >= 80)) { //wait 80 milliseconds before alloweing player to walk again if holding down a key
@@ -28,7 +28,6 @@ void Player::safeMove(int x, int y) {
         Tile tileAt = map.getTileAt(pos.x + x, pos.y + y);
 
         if (tileAt.solid()) {
-            logger.info("Solid tile.");
             prevPos.x = tileAt.getPosition().x;
             prevPos.y = tileAt.getPosition().y;
             //add a collision event to the event queue
